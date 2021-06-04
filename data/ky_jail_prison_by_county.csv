@@ -1,0 +1,112 @@
+State,County,FIPS,Type,Facility,Physical Address,Provider,First Minute (instate),Additional Minutes (instate),15 Minute Call (instate),lat,long,address source,website
+Kentucky,Boyd County,019,Federal Prison,FCI Ashland (Low),SR 716 Ashland KY 41105,,,,,38.433568,-82.714635,poi,https://www.bop.gov/locations/institutions/ash/
+Kentucky,Clay County,051,Federal Prison,FCI Manchester (Medium),805 Fox Hollow Rd Manchester KY 40962,,,,,37.180407,-83.787746,poi,https://www.bop.gov/locations/institutions/man/
+Kentucky,Fayette County,067,Federal Prison,FMC Lexington,3301 Leestown Rd Lexington KY 40511,,,,,38.104617,-84.561791,poi,https://www.bop.gov/locations/institutions/lex/
+Kentucky,McCreary County,147,Federal Prison,USP McCreary (High),330 Federal Way Pine Knot KY 42635,,,,,36.68592,-84.38824,poi,https://www.bop.gov/locations/institutions/mcr/
+Kentucky,Martin County,159,Federal Prison,USP Big Sandy (High Security),1197 Airport Rd Inez KY 41224,,,,,37.770178,-82.648207,poi,https://www.bop.gov/locations/institutions/bsy/
+Kentucky,Adair County,001,Jail,Adair County Regional Jail,204 Greensburg St Columbia KY 42728,,,,,37.10373,-85.30683,online mapping service,http://www.adaircountyregionaljail.com/
+Kentucky,Allen County,003,Jail,Allen County Detention Center ,196 W Wood St Scottsville KY 42164,,,,,36.748404,-86.19187,online mapping service,http://www.allencountydetention.com/index2.html
+Kentucky,Ballard County,007,Jail,Ballard County Detention Center,132 Mayola Ave Wickliffe KY 42087,,,,,36.97462,-89.08312,online mapping service,http://www.ballardcountydetention.com/
+Kentucky,Barren County,009,Jail,Barren County Detention Center,201 Samson St Glasgow KY 42141,Securus,$1.80,$0.30,$6.00,37.00068,-85.91972,online mapping service,http://www.barrencountykyjail.com/
+Kentucky,Barren County,009,Jail,Barren County Detention Center,201 Samson St Glasgow KY 42141,,,,,37.00037,-85.91864,online mapping service,http://www.barrencountykyjail.com/
+Kentucky,Bell County,013,Jail,Bell County Detention Center,214 Virginia Ave Pineville KY 40977,,,,,36.76231,-83.69679,online mapping service,http://www.bellcountydetention.com/contact_us.html
+Kentucky,Boone County,015,Jail,Boone County Jail,3020 Conrad Ln Burlington KY 41005,,,,,39.03628,-84.72869,online mapping service,http://www.boonecountyky.org/
+Kentucky,Boyd County,019,Jail,Boyd County Detention Center,209 28th St Catlettsburg KY 41129,Securus,$2.07,$0.32,$6.55,38.41541,-82.59764,online mapping service,http://www.boydcojail.com/
+Kentucky,Boyle County,021,Jail,Boyle County Jail,1860 S Danville Bypass Danville KY 40422,,,,,37.62316,-84.79415,online mapping service,none
+Kentucky,Breckinridge County,027,Jail,Breckinridge County Jail,500 Glen Nash Ln Hardinsburg KY 40143,,,,,37.78375,-86.47512,online mapping service,none
+Kentucky,Bullitt County,029,Jail,Bullitt County Detention Center,1671 Preston Hwy Shepherdsville KY 40165,,,,,37.97137,-85.71226,online mapping service,http://www.bullittdetention.com/
+Kentucky,Butler County,031,Jail,Butler County Jail,112 N Warren St Morgantown KY 42261,,,,,37.22535,-86.68294,online mapping service,https://butlercokyjail.com/
+Kentucky,Caldwell County,033,Jail,Caldwell County Jail,111 E Market St Princeton KY 42445,Securus,$1.78,$0.28,$5.70,37.10899,-87.88201,online mapping service,http://www.caldwellcountyjail.com/
+Kentucky,Calloway County,035,Jail,Calloway County Jail,310 N 4th St Murray KY 42071,,,,,36.61358,-88.30074,online mapping service,http://www.callowaycountyjail.com/
+Kentucky,Campbell County,037,Jail,Campbell County Detention Center,601 Central Ave Newport KY 41071,,,,,39.0887,-84.49671,online mapping service,https://ccdc.ky.gov/Pages/index.aspx
+Kentucky,Carroll County,041,Jail,Carroll County Detention Center,800 Clay St Carrollton KY 41008,Securus,$3.18,$0.43,$9.20,38.67694,-85.17364,online mapping service,http://www.carrolldetention.com/
+Kentucky,Carroll County,041,Jail,Carroll County Detention  ,800 Clay St Carrollton KY 41008,,,,,38.67709,-85.17362,online mapping service,http://www.carrolldetention.com/
+Kentucky,Carter County,043,Jail,Carter County Detention Center,13 Crossbar Rd Grayson KY 41143,Securus,$0.75,$0.34,$5.51,38.3314,-82.93777,online mapping service,http://cartercounty.ky.gov/Elected-Officials/Pages/County-Officials.aspx
+Kentucky,Casey County,045,Jail,Casey County Detention Center,169 Court House Square Liberty KY 42539,,,,,37.31748,-84.94087,online mapping service,http://www.caseycountyjail.com/
+Kentucky,Christian County,047,Jail,Christian Couny Jail,410 W 7th St Hopkinsville KY 42240,,,,,36.86826,-87.49048,online mapping service,http://www.ccjail.org/
+Kentucky,Clark County,049,Jail,Clark County Detention Center,30 Wall St Winchester KY 40391,,,,,37.99304,-84.17837,online mapping service,http://www.clarkdetentioncenter.com/
+Kentucky,Clay County,051,Jail,Clay County Detention Center,67 Shamrock Rd Manchester KY 40962,Securus,$1.85,$0.35,$6.75,37.13521,-83.76103,online mapping service,http://www.claycountydetention.com/
+Kentucky,Clay County,051,Jail,Clay County Detention Center,67 Shamrock Rd Manchester KY 40962,,,,,37.1353,-83.76061,online mapping service,http://www.claycountydetention.com/
+Kentucky,Clinton County,053,Jail,Clinton County Jail,100 South Cross Street Albany KY 42602,Securus,$3.20,$0.20,$6.02,36.69047,-85.13541,online mapping service,https://nisquallycorrections.com/kentucky/county-jail/clinton-county-jail-4/
+Kentucky,Crittenden County,055,Jail,Crittenden County Detention Center,208 West Carlisle St Marion KY 42064,Securus,$1.87,$0.37,$7.05,37.33218,-88.08328,online mapping service,http://www.crittendencountydetention.com/
+Kentucky,Daviess County,059,Jail,Daviess County Detention Center,3337 HWY 144 Owensboro KY 42303,,,,,37.78635,-87.07158,online mapping service,http://www.daviesscojail.org/
+Kentucky,Fayette County,067,Jail,Lexington Fayette Urban Detention,200 E Main St Lexington KY 40507,Securus,$0.14,$0.14,$2.10,38.04476,-84.49559,online mapping service,http://jail.lexingtonky.gov/
+Kentucky,Fayette County,067,Jail,Lexington County Detention Center,600 Old Frankfort Cir Lexington KY 40510,,,,,38.06578,-84.54478,online mapping service,http://jail.lexingtonky.gov/
+Kentucky,Floyd County,071,Jail,Floyd County Detention Center,151 S Central Ave Prestonsburg KY 41653,Securus,$1.90,$0.40,$7.50,37.66845,-82.77099,online mapping service,http://www.fcsoky.us/
+Kentucky,Floyd County,071,Jail,Floyd County Jail,151 S Central Ave Prestonsburg KY 41653,,,,,37.66811,-82.77117,online mapping service,http://www.fcsoky.us/
+Kentucky,Franklin County,073,Jail,Franklin County Regional Jail,400 Coffee Tree Rd Frankfort KY 40604,Securus,$0.21,$0.21,$3.15,38.18117,-84.85858,online mapping service,http://franklincountyregionaljail.com/
+Kentucky,Fulton County,075,Jail,Fulton County Detention Center,2010 S 7th St Hickman KY 42050,,,,,36.55939,-89.17912,online mapping service,http://www.fultonkyjail.com/
+Kentucky,Grant County,081,Jail,Grant County Jail,212 Barnes Rd Williamstown KY 41097,,,,,38.64958,-84.57508,online mapping service,none
+Kentucky,Graves County,083,Jail,Graves County Jail-All Locations,103 E South St Mayfield KY 42066,Securus,$0.30,$0.30,$4.50,36.7408,-88.63499,online mapping service,http://www.gravescountyjail.net/
+Kentucky,Graves County,083,Jail,Graves County Jail ,103 E South St Mayfield KY 42066,,,,,36.74085,-88.63501,online mapping service,http://www.gravescountyjail.net/
+Kentucky,Grayson County,085,Jail,Grayson County Detention Center,320 Shaw Station Rd Leitchfield KY 42754,,,,,37.48854,-86.27023,online mapping service,http://www.gcdetention.com/
+Kentucky,Greenup County,089,Jail,Greenup County Detention Center,100 Laurel St Greenup KY 41144,,,,,38.57767,-82.83623,online mapping service,none
+Kentucky,Hardin County,093,Jail,Hardin County Detention Center- (All Locations),100 Lawson Blvd Elizabethtown KY 42701,Securus,$1.79,$0.29,$5.85,37.66298,-85.84963,online mapping service,http://www.hcdetention.com/hardin_inmatelist.html
+Kentucky,Harlan County,095,Jail,Harlan County Detention Center,6000 HWY KY-38 Evarts KY 40828,Telmate,$0.25,$0.25,$3.75,36.85404,-83.23507,online mapping service,http://www.harlandc.com/
+Kentucky,Harlan County,095,Jail,Harlan County Detention Center,6000 HWY 38 Evarts KY 40828,,,,,36.85384,-83.23515,online mapping service,http://www.harlandc.com/
+Kentucky,Hart County,099,Jail,Hart County Jail,520 AA Whitman Ln Munfordville KY 42765,,,,,37.27636,-85.88986,online mapping service,http://www.hartcountykyjail.com/
+Kentucky,Henderson County,101,Jail,Henderson County Detention Center,380 Borax Dr Henderson KY 42420,Securus,$3.32,$0.57,$11.30,37.81305,-87.62752,online mapping service,http://hendersoncountydetention.com/
+Kentucky,Hopkins County,107,Jail,Hopkins County Jail,2250 Laffoon Trail P.O. Box 1030 Madisonville KY 42431,,,,,37.33731,-87.53975,online mapping service,http://www.hopkinscountyjail.com/
+Kentucky,Jackson County,109,Jail,Jackson County Detention Center,1893 McCammon Ridge Rd McKee KY 40447,,,,,37.41543,-83.96351,online mapping service,http://jacksoncountydetentioncenter.com/index2.html
+Kentucky,Jefferson County,111,Jail,Community Correctional Center,316 E Chestnut St Louisville KY 40202,Securus,$1.73,$0.23,$4.95,38.24698,-85.74795,online mapping service,none
+Kentucky,Jefferson County,111,Jail,Louisville Metro Department of Corrections,400 S 6th St Louisville KY 40202,Securus,$1.73,$0.23,$4.95,38.25327,-85.76071,online mapping service,https://louisvilleky.gov/government/corrections
+Kentucky,Jefferson County,111,Jail,Jefferson County Jail,514 W Liberty St Louisville KY 40202,,,,,38.25288,-85.76014,online mapping service,none
+Kentucky,Jessamine County,113,Jail,Jessamine County Detention Center,229 E Maple St Nicholasville KY 40356,Telmate,$0.25,$0.25,$3.75,37.88006,-84.57014,online mapping service,http://www.jessaminedetention.com/
+Kentucky,Johnson County,115,Jail,Big Sandy Regional Detention Center,904 3rd St Paintsville KY 41240,Securus,$3.16,$0.41,$8.90,37.82553,-82.82729,online mapping service,http://www.bsrdc.com/
+Kentucky,Kenton County,117,Jail,Kenton County Detention Center,3000 Decker Crane Ln Covington KY 41017,,,,,39.0024,-84.5312,online mapping service,http://www.kentoncounty.org/
+Kentucky,Knox County,121,Jail,Knox County Detention Center,570 KY-225 Barbourville KY 40906,,,,,36.84898,-83.87328,online mapping service,http://www.knoxcountydetention.com/
+Kentucky,LaRue County,123,Jail,LaRue County Detention Center,209 W High St Hodgenville KY 42748,,,,,37.57191,-85.74242,online mapping service,http://laruecountydetention.com/
+Kentucky,Laurel County,125,Jail,Laurel County Correctional Center,204 W 4th St London KY 40741,Telmate,$0.25,$0.25,$3.75,37.12727,-84.08416,online mapping service,http://www.laurelcountycorrections.com/laurelcoc_inmatelist.html
+Kentucky,Leslie County,131,Jail,Leslie County Detention Center,2125 KY-118 Hyden KY 41749,Telmate,$0.25,$0.25,$3.75,37.1637,-83.41072,online mapping service,http://www.lesliecountydetention.com/
+Kentucky,Letcher County,133,Jail,Letcher County Jail,156 Main St Whitesburg KY 41858,Securus,$1.89,$0.39,$7.35,37.118,-82.82668,online mapping service,http://www.letcherjail.com/
+Kentucky,Letcher County,133,Jail,Letcher County Jail,156 E Main St Whitesburg KY 41848,,,,,37.11813,-82.82672,online mapping service,http://www.letcherjail.com/
+Kentucky,Lincoln County,137,Jail,Lincoln County Regional Jail,100 Lancaster St Stanford KY 40484,,,,,37.52993,-84.6616,online mapping service,http://www.lincolnregionaljail.com/index.html
+Kentucky,Logan County,141,Jail,Logan County Jail,304 W 3rd St Russellville KY 42276,,,,,36.84583,-86.8909,online mapping service,http://www.logancojail.com/Logan_inmate_list.html
+Kentucky,McCracken County,145,Jail,McCracken County Jail,400 S 7th St Paducah KY 42003,,,,,37.0817,-88.59919,online mapping service,http://www.mccrackencountyjailky.com/
+Kentucky,Madison County,151,Jail,Madison County Detention Center,107 W Irvine St Richmond KY 40475,,,,,37.74842,-84.29391,online mapping service,none
+Kentucky,Marion County,155,Jail,Marion County Detention Center,201 Warehouse Rd Lebanon KY 40033,Telmate,$0.25,$0.25,$3.75,37.56568,-85.26889,online mapping service,none
+Kentucky,Marshall County,157,Jail,Marshall County Detention Center,54 Judicial Dr Benton KY 42025,,,,,36.86625,-88.35636,online mapping service,https://www.marshallcountyky.gov/jail/
+Kentucky,Mason County,161,Jail,Mason County Detention Center,702 U.S.-68 Maysville KY 41056,,,,,38.63865,-83.7573,online mapping service,http://www.masoncountydetention.com/
+Kentucky,Meade County,163,Jail,Meade County Detention Center,516 Hillcrest Dr Brandenburg KY 40108,,,,,38.0016,-86.17555,online mapping service,http://meadeky.com/detention-center/
+Kentucky,Montgomery County,173,Jail,Montgomery County Regional Jail,751 Chenault Ln Mt Sterling KY 40353,,,,,38.04775,-83.95399,online mapping service,http://www.montgomerycountyregionaljail.com/MontgomeryCountyRegionalJail_Inmatelist.html
+Kentucky,Muhlenberg County,177,Jail,Muhlenberg County Detention,108 Court Row Greenville KY 42345,,,,,37.19987,-87.17587,online mapping service,http://muhlenbergdetention.com/
+Kentucky,Nelson County,179,Jail,Nelson County Detention Center,810 W Stephen Foster Ave Bardstown KY 40004,Securus,$1.82,$0.32,$6.30,37.81096,-85.47931,online mapping service,http://www.nelsoncountyjailky.com/
+Kentucky,Nelson County,179,Jail,Nelson County Jail,810 W Stephen Foster Ave Bardstown KY 40004,,,,,37.8111,-85.47918,online mapping service,http://www.nelsoncountyjailky.com/
+Kentucky,Oldham County,185,Jail,Oldham County Detention Center,3405 KY-146 La Grange KY 40031,,,,,38.38925,-85.42339,online mapping service,http://www.oldhamcountyjail.com/
+Kentucky,Perry County,193,Jail,Kentucky River Regional Jail,200 Justice Dr Hazard KY 41701,Telmate,$0.25,$0.25,$3.75,37.29867,-83.216,online mapping service,https://perrycounty.ky.gov/da/Pages/jail.aspx
+Kentucky,Pike County,195,Jail,Pike County Detention Center,172 Division St Pikeville KY 41501,,,,,37.47866,-82.5165,online mapping service,http://www.pikecountydetention.com/
+Kentucky,Powell County,197,Jail,Powell County Detention Center,755 Breckenridge St Stanton KY 40380,,,,,37.8533,-83.86107,online mapping service,http://powellcountyky.us/detention.asp
+Kentucky,Pulaski County,199,Jail,Pulaski County Detention Center,300 Hail Knob Rd Somerset KY 42503,Telmate,$0.25,$0.25,$3.75,37.08537,-84.62501,online mapping service,http://www.pulaskijail.com/
+Kentucky,Rockcastle County,203,Jail,Rockcastle County Detention Center,  205 E Main St Mt Vernon KY 40456,,,,,37.35219,-84.33699,online mapping service,http://www.rockcastlecountydetention.com/
+Kentucky,Rowan County,205,Jail,Rowan County Detention Center,1075 S Tolliver Rd Morehead KY 40351,Securus,$3.06,$0.31,$7.40,38.1926,-83.41686,online mapping service,http://www.rowancountydc.org/
+Kentucky,Rowan County,205,Jail,Rowan County Detention Center,1075 S Tolliver Rd Morehead KY 40351,,,,,38.1922,-83.4173,online mapping service,http://www.rowancountydc.org/
+Kentucky,Russell County,207,Jail,Russell County Detention Center,228 Brian Walters Dr Russell Springs KY 42642,,,,,37.02419,-85.07153,online mapping service,http://www.russellcountydetention.com/
+Kentucky,Scott County,209,Jail,Scott County Detention Center,130 N. Court St Georgetown KY 40324,Securus,$1.87,$0.37,$7.05,38.21098,-84.55837,online mapping service,http://www.scottjailky.com/Inmate_Lookup.html
+Kentucky,Shelby County,211,Jail,Shelby County Detention Center,1000 Detention Rd Shelbyville KY 40065,,,,,38.21868,-85.2211,online mapping service,none
+Kentucky,Simpson County,213,Jail,Simpson County Detention Center,217 E Kentucky St Franklin KY 42134,,,,,36.72303,-86.57585,online mapping service,http://www.simpsoncojail.org/
+Kentucky,Taylor County,217,Jail,Taylor County Detention Center,120 S Central Ave Campbellsville KY 42718,,,,,37.3407,-85.34239,online mapping service,http://www.taylorcountydetention.com/
+Kentucky,Todd County,219,Jail,Taylor County Jail,203 N Court St Campbellsville KY 42718,,,,,37.34163,-85.34483,online mapping service,http://taylorcountydetention.com/
+Kentucky,Warren County,227,Jail,Warren County Regional Jail,920 Kentucky St Bowling Green KY 42101,Securus,$1.97,$0.47,$8.55,36.99512,-86.4402,online mapping service,http://www.warrencountyjail.com/
+Kentucky,Wayne County,231,Jail,Wayne County Detention,217 Jim Hill Service Rd. Monticello KY 42633,,,,,36.85174,-84.85601,online mapping service,http://www.waynecountydetentionky.com/Wayne_Inmatelist.html
+Kentucky,Webster County,233,Jail,Webster County Detention,141 Stegal St PO Box 300 Dixon KY 42409,,,,,37.51589,-87.69066,online mapping service,http://www.webstercountydetention.com/Webster_Inmatelist.html
+Kentucky,Whitley County,235,Jail,Whitley County Detention Center,1439 KY-92 Williamsburg KY 40769,,,,,,,online mapping service,http://www.whitleycountyfiscalcourt.com/
+Kentucky,Woodford County,239,Jail,Woodford County Fiscal Ct,103 S Main St #200 Versailles KY 40383,Securus,$1.80,$0.30,$6.00,38.05266,-84.73063,online mapping service,https://woodfordcounty.ky.gov/gov/Pages/coclerk.aspx
+Kentucky,Woodford County,239,Jail,Woodford County Detention,204 Beasley Rd Versailles KY 40383,,,,,38.04758,-84.757886,online mapping service,http://www.woodfordcountydetention.com/
+Kentucky,Caldwell County,033,Jail,Caldwell County Jail,111 E Market St Princeton KY 42445,,,,,37.10901,-87.88193,online mapping service,http://www.caldwellcountyjail.com/
+Kentucky,Clinton County,053,Jail,Clinton County Jail,100 South Cross Street Suite 103 Albany  KY 42602,,,,,36.69052,-85.13548,online mapping service,https://clinton.clerkinfo.net/
+Kentucky,Ohio County,183,Jail,Ohio County Jail,108 Washington St Hartford KY 42347,,,,,37.45012,-86.9076,online mapping service,http://ohiocounty.ky.gov/
+Kentucky,Bourbon County,017,Jail,Bourbon County Regional Detention Center,101 Legion Rd Paris KY 40361,,,,,38.22398,-84.24614,online mapping service,http://www.bourboncountydetention.com/
+Kentucky,Lee County,129,Jail,Three Forks Regional Jail,2221 Fairgrounds Ridge Rd Beattyville KY 41311,Securus,$0.30,$0.30,$4.50,37.60545,-83.7101,online mapping service,http://www.threeforksregionaljail.com/
+Kentucky,Bell County,013,State Prison,Bell County Forestry Camp,560 Correctional Dr Pineville KY 40977,,,,,36.66809,-83.85145,online mapping service,https://corrections.ky.gov/Facilities/AI/BCFC/Pages/default.aspx
+Kentucky,Caldwell County,033,State Prison,Western Kentucky Correctional Complex,374 New Bethel Church Rd Fredonia KY 42411,,,,,37.13827,-88.03973,online mapping service,https://corrections.ky.gov/Facilities/AI/wkcc/Pages/default.aspx
+Kentucky,Casey County,045,State Prison,Eastern Kentucky Correctional Complex,200 Rd to Justice West Liberty KY 41472,,,,,37.90397,-83.27136,online mapping service,https://corrections.ky.gov/Facilities/AI/EKCC/Pages/default.aspx
+Kentucky,Elliott County,063,State Prison,Little Sandy Correctional Complex,505 Prison Connector Sandy Hook KY 41171,,,,,38.1349,-83.08234,online mapping service,https://corrections.ky.gov/Facilities/AI/lscc/Pages/default.aspx
+Kentucky,Fayette County,067,State Prison,Blackburn Correctional Complex,3111 Spurr Rd Lexington KY 40511,,,,,38.11166,-84.53747,online mapping service,https://corrections.ky.gov/Facilities/AI/BCC/Pages/default.aspx
+Kentucky,Lee County,129,State Prison,Lee Adjustment Center,168 Lee Adjustment Center Dr. Beattyville KY 41311,,,,,37.60683,-83.70576,online mapping service,https://corrections.ky.gov/Facilities/AI/LAC/Pages/default.aspx
+Kentucky,Lyon County,143,State Prison,Kentucky State Penitentiary,266 Water St Eddyville KY 42038,,,,,37.04852,-88.07731,online mapping service,https://corrections.ky.gov/Facilities/AI/ksp/Pages/default.aspx
+Kentucky,Mercer County,167,State Prison,Northpoint Training Center,P.O. Box 479 Hwy 33 710 Walter Reed Rd Burgin KY 40310,,,,,37.70864,-84.74532,online mapping service,https://corrections.ky.gov/Facilities/AI/ntc/Pages/default.aspx
+Kentucky,Muhlenberg County,177,State Prison,Green River Correctional Complex,1200 River Rd P.O. Box 9300 Central City KY 42330,,,,,37.31467,-87.11291,online mapping service,https://corrections.ky.gov/Facilities/AI/GRCC/Pages/default.aspx
+Kentucky,Oldham County,185,State Prison,Kentucky Correctional Institution for Women,3000 Ash Ave Pewee Valley KY 40056,,,,,38.28377,-85.45826,online mapping service,https://corrections.ky.gov/Facilities/AI/KCIW/Pages/default.aspx
+Kentucky,Oldham County,185,State Prison,Roederer Correctional Complex,P.O. Box 69 4000 Morgan Rd La Grange KY 40031,,,,,38.40334,-85.42982,online mapping service,https://corrections.ky.gov/Facilities/AI/rcc/Pages/default.aspx
+Kentucky,Oldham County,185,State Prison,Luther Luckett Correctional Complex,1612 Dawkins Rd Box 6 La Grange KY 40031,,,,,38.41202,-85.42611,online mapping service,https://corrections.ky.gov/Facilities/AI/llcc/Pages/default.aspx
+Kentucky,Oldham County,185,State Prison,Kentucky State Reformatory,3001 W HWY 146 La Grange KY 40032,,,,,38.40236,-85.41443,online mapping service,https://corrections.ky.gov/Facilities/AI/ksr/Pages/default.aspx
