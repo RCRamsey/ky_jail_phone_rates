@@ -2,11 +2,11 @@
 
     var map = L.map('map', {
         zoomSnap: .1,
-        // center: [-.23, 37.8],
+        //center: [-84.2700, 37.8393],
         // zoom: 7,
-        minZoom: 6,
-        maxZoom: 9,
-        maxBounds: L.latLngBounds([-6.22, 27.72], [5.76, 47.83])
+        minZoom: 7,
+        maxZoom: 10,
+        maxBounds: L.latLngBounds([36.16, -89.45], [39.06 , -81.62 ])
     });
 
     var accessToken = 'pk.eyJ1IjoicmNyYW1zZXkiLCJhIjoiY2tpN3UxOTJwMnh2ejJycXFja3NxemRocyJ9.cbhIjbrLpEGG0HkQS3fGLA'
@@ -19,15 +19,14 @@
     }).addTo(map);
 
 
-    omnivore.csv('data/kenya_education_2014.csv')
+    omnivore.csv('data/ky_jail_prison_by_county.csv')
         .on('ready', function (e) {
 
             //access to GeoJSON here
             //.toGeoJSON method, added to e.target object, to load csv as GeoJSON
             //bonus loading as csv instead of GeoJSON initially reduces file size
 
-            //🔥I don't see any data when I console.log....
-            console.log(e.target.toGeoJSON()) // it's there
+            console.log(e.target.toGeoJSON())
 
             drawMap(e.target.toGeoJSON());
             drawLegend(e.target.toGeoJSON());
@@ -50,28 +49,32 @@
                 })
             }
         }
-        // create 2 separate layers from GeoJSON data
-        const girlsLayer = L.geoJson(data, options).addTo(map),
-            boysLayer = L.geoJson(data, options).addTo(map);
+        // create 3 separate layers from GeoJSON data
+        const minuteLayer = L.geoJson(data, options).addTo(map),
+            addMinuteLayer = L.geoJson(data, options).addTo(map);
+            fifteenMinuteLayer = L.geoJson(data,options).addTo(map);
 
-        girlsLayer.setStyle({
-            color: '#008c51',
+        minuteLayer.setStyle({
+            color: '#000000',
         });
-        boysLayer.setStyle({
-            color: '#922529',
+        addMinuteLayer.setStyle({
+            color: '#9c7b66',
         });
+        // fifteenMinuteLayer.setStyle({
+        //     color: '#d16706',
+        // })
 
         // fit the bounds of the map to one of the layers
-        map.fitBounds(girlsLayer.getBounds());
+        map.fitBounds(minuteLayer.getBounds());
 
         // adjust zoom level of map
         map.setZoom(map.getZoom() - .4);
 
-        //set/update size of circles
-        resizeCircles(girlsLayer, boysLayer, 1);
+        //💭set/update size of circles, what does the 1 stand for again currentGrade to start with?
+        resizeCircles(minuteLayer, addMinuteLayer, fifteenMinuteLayer);
 
         //create UI slider
-        sequenceUI(girlsLayer, boysLayer);
+        // sequenceUI(minuteLayer, addMinuteLayer, fifteenMinuteLayer);
     } //end drawMap()
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -98,13 +101,13 @@
         const dataValues = [];
 
         // loop through all features (i.e., the schools)
-        data.features.forEach(function (school) {
+        data.features.forEach(function (facility) {
 
-            // for each grade in a school
-            for (let grade in school.properties) {
+            // for each time 1st minute, additional minute, 15 minute per jail
+            for (let time in facility.properties) {
 
                 // shorthand to each value
-                const value = school.properties[grade];
+                const value = facility.properties[grade];
 
                 // if the value can be converted to a number 
                 // the + operator in front of a number returns a number
@@ -168,16 +171,16 @@
         $("<hr class='small'>").insertBefore(".legend-small-label").css('top', largeDiameter - smallDiameter - 8);
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    function resizeCircles(girlsLayer, boysLayer, currentGrade) {
-        girlsLayer.eachLayer(function (layer) {
-            const radius = calcRadius(Number(layer.feature.properties['G' + currentGrade]));
+    function resizeCircles(minuteLayer, addMinuteLayer, fifteenMinuteLayer, currentMinute) {
+        Layer.eachLayer(function (layer) {
+            const radius = calcRadius(Number(layer.feature.properties[currentMinute]));
             layer.setRadius(radius);
         });
-        boysLayer.eachLayer(function (layer) {
-            const radius = calcRadius(Number(layer.feature.properties['B' + currentGrade]));
+        addMinuteLayer.eachLayer(function (layer) {
+            const radius = calcRadius(Number(layer.feature.properties[currentMinute]));
             layer.setRadius(radius);
         });
-        retrieveInfo(boysLayer, currentGrade);
+        retrieveInfo(minuteLayer, addMinuteLayer, fifteenMinuteLayer, 1);
     }
 //////////////////////////////////////////////////////////////////////////////////////////////
     function calcRadius(val) {
@@ -185,7 +188,7 @@
         return radius * .5; // adjust .5 as a scale factor
     }
 /////////////////////////////////////////////////////////////////////////////////////////
-    function sequenceUI(girlsLayer, boysLayer) {
+    function sequenceUI(minuteLayer, addMinuteLayer, fifteenMinuteLayer) {
         // sequenceUI function body
         const sliderControl = L.control({
             position: 'bottomleft'
@@ -221,102 +224,85 @@
                 $('#sliderTitle').html(`<b>Grade: ${currentGrade}</b>`);
 
                 // resize the circles with updated grade level
-                resizeCircles(girlsLayer, boysLayer, currentGrade);
+                resizeCircles(minuteLayer, addMinuteLayer, fifteenMinuteLayer, currentGrade);
             });
 
     }
 /////////////////////////////////////////////////////////////////////////////////////
-    //use single layer because both use same data for grade
-    //also the boys layer is ontop of girls layer so it can detect mousover events
-    function retrieveInfo(boysLayer, currentGrade) {
-        // update the hover window with current grade's
-      // select the element and reference with variable
-      // and hide it from view initially
-      const info = $('#info').hide();
+    // //use single layer because both use same data for grade
+    // //also the boys layer is ontop of girls layer so it can detect mousover events
+    // function retrieveInfo(minuteLayer, currentGrade) {
+    //     // update the hover window with current grade's
+    //   // select the element and reference with variable
+    //   // and hide it from view initially
+    //   const info = $('#info').hide();
 
-      // since boysLayer is on top, use to detect mouseover events
-      boysLayer.on('mouseover', function (e) {
+    //   // since boysLayer is on top, use to detect mouseover events
+    //   boysLayer.on('mouseover', function (e) {
 
-          // remove the none class to display and show
-          info.show();
+    //       // remove the none class to display and show
+    //       info.show();
 
-          // access properties of target layer
-          const props = e.layer.feature.properties;
+    //       // access properties of target layer
+    //       const props = e.layer.feature.properties;
 
-          // populate HTML elements with relevant info
-          $('#info span').html(props.COUNTY);
-          $(".girls span:first-child").html(`(grade ${currentGrade})`);
-          $(".boys span:first-child").html(`(grade ${currentGrade})`);
-          $(".girls span:last-child").html(Number(props[`G${currentGrade}`]).toLocaleString());
-          $(".boys span:last-child").html(Number(props[`B${currentGrade}`]).toLocaleString());
+    //     //   // populate HTML elements with relevant info
+    //       $('#info span').html(props.COUNTY);
+    //       $(".girls span:first-child").html(`(grade ${currentGrade})`);
+    //       $(".boys span:first-child").html(`(grade ${currentGrade})`);
+    //       $(".girls span:last-child").html(Number(props[`G${currentGrade}`]).toLocaleString());
+    //       $(".boys span:last-child").html(Number(props[`B${currentGrade}`]).toLocaleString());
 
-          // raise opacity level as visual affordance
-          e.layer.setStyle({
-              fillOpacity: .6
-          });
+    //       // raise opacity level as visual affordance
+    //       e.layer.setStyle({
+    //           fillOpacity: .6
+    //       });
 
-          // empty arrays for boys and girls values
-          const girlsValues = [],
-              boysValues = [];
+    //       // empty arrays for boys and girls values
+    //       const minuteValues = [],
+    //           addMinuteValues = [],
+    //           fifteenMinuteValues = [],
 
-          // loop through the grade levels and push values into those arrays
-          for (let i = 1; i <= 8; i++) {
-              girlsValues.push(props['G' + i]);
-              boysValues.push(props['B' + i]);
-          }
-
-          $('.girlspark').sparkline(girlsValues, {
-              width: '200px',
-              height: '30px',
-              lineColor: '#008c51',
-              fillColor: '#6cac8f ',
-              spotRadius: 0,
-              lineWidth: 2
-          });
-
-          $('.boyspark').sparkline(boysValues, {
-              width: '200px',
-              height: '30px',
-              lineColor: '#922529',
-              fillColor: '#a46366',
-              spotRadius: 0,
-              lineWidth: 2
-          });
-      });
+    //       // loop through the grade levels and push values into those arrays
+    //       for (let i = 1; i <= 4; i++) {
+    //           minuteValues.push(props['G' + i]);
+    //           addMinuteValues.push(props['B' + i]);
+    //           fifteenMinuteValues.push(props['C'+ i]);
+    //       }
        
-      // hide the info panel when mousing off layergroup and remove affordance opacity
-      boysLayer.on('mouseout', function (e) {
+    //   // hide the info panel when mousing off layergroup and remove affordance opacity
+    //   boysLayer.on('mouseout', function (e) {
 
-          // hide the info panel
-          info.hide();
+    //       // hide the info panel
+    //       info.hide();
 
-          // reset the layer style
-          e.layer.setStyle({
-              fillOpacity: 0
-          });
-      });
+    //       // reset the layer style
+    //       e.layer.setStyle({
+    //           fillOpacity: 0
+    //       });
+    //   });
 
-      // when the mouse moves on the document
-      $(document).mousemove(function (e) {
-          // first offset from the mouse position of the info window
-          info.css({
-              "left": e.pageX + 6,
-              "top": e.pageY - info.height() - 25
-          });
+    //   // when the mouse moves on the document
+    //   $(document).mousemove(function (e) {
+    //       // first offset from the mouse position of the info window
+    //       info.css({
+    //           "left": e.pageX + 6,
+    //           "top": e.pageY - info.height() - 25
+    //       });
 
-          console.log(e.pageX, e.pageY)
-          // if it crashes into the top, flip it lower right
-          if (info.offset().top < 4) {
-              info.css({
-                  "top": e.pageY + 15
-              });
-          }
-          // if it crashes into the right, flip it to the left
-          if (info.offset().left + info.width() >= $(document).width() - 40) {
-              info.css({
-                  "left": e.pageX - info.width() - 80
-              });
-          }
-      });
-    }
+    //       console.log(e.pageX, e.pageY)
+    //       // if it crashes into the top, flip it lower right
+    //       if (info.offset().top < 4) {
+    //           info.css({
+    //               "top": e.pageY + 15
+    //           });
+    //       }
+    //       // if it crashes into the right, flip it to the left
+    //       if (info.offset().left + info.width() >= $(document).width() - 40) {
+    //           info.css({
+    //               "left": e.pageX - info.width() - 80
+    //           });
+    //       }
+    //   });
+    // }
 })();

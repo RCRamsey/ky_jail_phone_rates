@@ -5,8 +5,8 @@
 /* kenyan flag color scheme 
 adobe color confirmed color blind safe
 #000000
-#922529
-#008c51
+#d16706
+#9c7b66
 #ffffff
 */
 
@@ -21,15 +21,18 @@ adobe color confirmed color blind safe
 }
 
 h1 {
-    color: #008c51;
+    color: #d16706;
+    font-family: "Permanent Marker", cursive;
+    Font-size: 55px;
 }
 
 h2{
-    color: #922529
+    color:  #9c7b66;
 }
 
 body{
-    font-family: "Work Sans", sans-serif;
+    font-family: "Overpass", Sans-Serif;
+    font-size: 10px
 }
 .legend-large, .legend-small {
     border-radius: 50%;
@@ -47,12 +50,16 @@ hr.large {
     /* overwrite assembly.css rule */
 }
 
-.boys {
-    color: #922529;
+.minute {
+    color: #000000;
 }
 
-.girls {
-    color: #008c51;
+.addMinute {
+    color: #9c7b66;
+}
+
+.fifteenMinute{
+    color: #d16706;
 }
 
 /* absolute position within relative container in absolute position 30 px and 14 px */
