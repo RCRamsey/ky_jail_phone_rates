@@ -218,13 +218,13 @@
             .on('input', function () {
 
                 // current value of slider is current grade level
-                var currentGrade = this.value;
+                var currentMinute = this.value;
 
                 // populate HTML element with relevant info
-                $('#sliderTitle').html(`<b>Grade: ${currentGrade}</b>`);
+                $('#sliderTitle').html(`<b>Grade: ${currentMinue}</b>`);
 
                 // resize the circles with updated grade level
-                resizeCircles(minuteLayer, addMinuteLayer, fifteenMinuteLayer, currentGrade);
+                resizeCircles(minuteLayer, addMinuteLayer, fifteenMinuteLayer, currentMinute);
             });
 
     }
