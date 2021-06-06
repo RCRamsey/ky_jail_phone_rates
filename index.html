@@ -1,198 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset=utf-8 />
+    <meta charset="utf-8">
     <title>KY County Jail Phone Rates</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <!-- replace with 1.0 version released May 2021 once this latest release is accessbile in Mapbox's API -->
-    <link href="https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.min.css" rel="stylesheet">
-    <!-- is this the most up to date version -->
+
+    <meta name="viewport" content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="undefined" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
-    <link href='css/styles.css' rel='stylesheet' />
-    <!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'> -->
     <link href="https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker" rel="stylesheet">
 
-
-    <!-- <style>
-        /* custom CSS style rules written here*/
-        /* otherwise most CSS style rules being pulled from assembly.min.css */
-        #map { 
-            background: #448ee4; 
-        }
-
-        h1 {
-            color: orange;
-        }
-    </style> -->
 </head>
 
+<style>
+    /*bootstrap colors
+    primary
+    secondary
+    success
+    danger
+    info
+    wanring
+    
+    light
+    dark*/
+
+    body {
+        /* background: #20282e; */
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-weight: 800;
+        text-align: center;
+    }
+
+    p {
+        line-height: 1.7rem;
+    }
+
+    #map {
+        height: 75vh;
+        /* 80% of viewport height of element */
+        background: #e3ccc1;
+    }
+
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {}
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {}
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {}
+</style>
+
 <body>
-    <!-- parent 1 -->
-    <div class='flex-parent flex-parent--column viewport-full h-full-ml hmax-full bg-white py6 px30'>
 
-        <!-- child 1 title/subtitle -->
-        <div class='flex-child flex-child-grow px12 py12 scroll-auto'>
-
-            <!-- txt-h1 ref assembly documentation; mb bottom margin 6 pixels -->
-            <h1 class='txt-xl mb6 txt-bold'>
+    <div class="container">
+        <!-- web page title -->
+        <div class="row bg-secondary text-dark py-3">
+            <h1>
                 Rates & Fees STILL Apply
+                <small class="text-muted">32 Kentucky County Jail Phone Rates 2018</small>
             </h1>
-            <h2 class='txt-xl mb6 txt-bold'>
-                32 Kentucky County Jail Phone Calls in 2018
-            </h2>
         </div>
 
-        <!--child 2 primary map div element-->
-        <div class='flex-child flex-child-grow viewport-twothirds viewport-full-ml px30'>
-            <div id="map" class='viewport-twothirds viewport-full-ml'></div>
-
-            <!-- ui slider leaflet controls position-->
-            <div id='slider' class='range w240 bg-white round-ml px12 shadow-darken25'>
-                <input type="range" min="1" , max="8" , value="1" , step="1" />
+        <!-- main page map-proportional fees/rates ky -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-12 order-md-2 px-0">
+                <div id="map"></div>
             </div>
+        </div>
 
-            <!-- slider title -leaflet controls position-> -->
-            <div id='sliderTitle' class='bg-white round px12 py6 relative shadow-darken25'>
-                <h3 class='txt-bold mb3 w90'>Grade: 1</h3>
-            </div>
+        <div class="row">
 
-            <!-- legend leaflet controls position of over all legend BUT css controls position of hid chevron and it is relative to its parent in an absolute position-->
-            <div class="relative">
-                <button id='legend-button' class='button bg-white '>
-                    <svg class='icon w30 h30'>
-                        <use xlink:href='#icon-chevron-up'></use>
-                    </svg>
-                </button>
+            <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-0 px-0 g-3">
+                <div class="col-md-12">
 
-                <div id='legend' class='bg-white round px12 py12 relative shadow-darken25'>
-                    <h3 class='txt-bold mb12 w180'>Number of
-                        <span style='color:#008c51'>girl</span>
-                        and <span style='color: #922529'>boy</span>
-                        students enrolled by county</h3>
-                    <div class='legend-circles relative w180'>
-                        <div class="legend-large border border--gray-light absolute"></div>
-                        <div class="legend-small border border--gray-light absolute"></div>
-                        <div class="legend-large-label txt-m absolute"></div>
-                        <div class="legend-small-label txt-m absolute"></div>
-                    </div>
+                    <!-- Body text for page -->
+                    <p>There are no mistakes. You can fix anything that happens. There is no right or wrong - as long as
+                        it
+                        makes you happy and doesn't hurt anyone.</p>
+
+                    <p>That's crazy. A fan brush is a fantastic piece of equipment. Use it. Make friends with it.</p>
+
+                    <li>list 1</li>
+                    <li>list 2</li>
                 </div>
             </div>
 
-            <!-- ui info panel -->
-            <!-- adding in html to have more control over interaction with it and not have to work within the confines of a leaflet control layer. in this instance follow mouse and popup as hover over point -->
+            <div class="col-md-4 col-lg-4.5 col-xl5 order-md-1 px-0">
+                <div class="col-md-12"></div>
+                <!-- WMMT point map/range -->
+                section C<br>
+                section C<br>
+                section C<br>
 
-            <!-- span tags leave room to dynamically build info -->
-            <div id='info' class='py6 px12 bg-white border border--gray-light round fixed w240'>
-                <p>County: <span></span></p>
-                <p class='girls'>girls <span></span>: <span class='txt-l txt-bold'></span></p>
-                <p class='boys'>boys <span></span>: <span class='txt-l txt-bold'></span></p>
+                <!-- WMMT vimeo video -->
+                section D<br>
+                section D<br>
+                section D<br>
 
-                <!-- Additional elements added here for this step! -->
-                <hr class='txt-hr'>
-                <p class='my6'>trend: grades 1 &ndash; 8</p>
-                <p class='mb6'><span class='girlspark'></span></p>
-                <p><span class='boyspark'></span></p>
+                <!-- timer/calculator for cost of looking at webpage for alloted time -->
+                section E<br>
+                section E<br>
+                section E<br>
             </div>
         </div>
+    </div>
 
-        <!-- parent 2 -->
-        <div class='flex-parent flex-parent--column viewport-full h-full-ml hmax-full bg-white py18 px12'>
-
-            <!-- child 1 body title/text-->
-            <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-
-                <h1 class='txt-xl mb6 txt-bold'>
-                    Title of body text
-                </h1>
-                <!-- control appearance of paragraph elements by using the margins (margin y) to position these elements using assembly.css -->
-                <p class='my12'>To promote progressive policies in gender equality, <a class='link'
-                        href='https://www.constituteproject.org/constitution/Kenya_2010.pdf' target="_blank">Kenya's
-                        2010 Constitution</a> explicitly
-                    declares:
-                    <div class='txt-em my12'>Women and men have right to equal treatment and every child has the
-                        right to
-                        free and compulsory basic education.</div>
-                </p>
-                <p>The constitution explains the state can institute
-                    <div class='txt-em'>affirmative action programmes, to ensure that the youth access relevant
-                        education and training. </div>
-                    Review the map of Kenyan enrollment and observe Kenya's gender
-                    equality in grades 1-8 for 2014. </p>
-                <p>
-                    <div class='txt-ul'>
-                        <div class='txt-li'>list item 1.</div>
-                        <div class='txt-li'>list item 2</div>
-                    </div>
-                </p>
+    <div class="container">
+        <!--🔥 best way to add gutter for y axis? -->
+        <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
+            <div class="col">
+                <div class="p-3 border bg-light">Section f linegraph</div>
             </div>
-
-                 <!-- child 2 wmmt map -->
-                <div class='flex-child flex-child--grow px12 py12 scroll-auto'></div>
-            
-                    <!-- child 3 wmmt video -->
-                    <div class='flex-child flex-child--grow px12 py12 scroll-auto'></div>
-            
-                        <!-- child 4 timer/cost phone call -->
-                        <div class='flex-child flex-child--grow px12 py12 scroll-auto'></div>
+            <div class="col">
+                <div class="p-3 border bg-light">Section g pie graph</div>
+            </div>
+            <div class="col">
+                <div class="p-3 border bg-light">Section h line graph</div>
+            </div>
+            <div class="col">
+                <!-- choropleth urban v rural/median incomes -->
+                <div class="p-3 border bg-light">Section I </div>
+            </div>
+            <div class="col">
+                <!-- jail locals point map -->
+                <div class="p-3 border bg-light">Section J</div>
+            </div>
+            <div class="col">
+                <!-- choropleth % pop incarcerated -->
+                <div class="p-3 border bg-light">Section K</div>
+            </div>
         </div>
+    </div>
+    </div>
 
-        <!-- parent 3 -->
-        <div class='flex-parent flex-parent--column viewport-full h-full-ml hmax-full bg-white py18 px12'>
-
-            <!-- child 1 line graph KY prison & Jail population-->
-            <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-
-                <!-- child 2 pie graph how many residents KY locked up and where-->
-                <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-
-                    <!-- child 3 line graph phone rates prison vs jail over time-->
-                    <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-
-                        <!-- child 4 choropleth urbal rural meian income-->
-                        <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-
-                            <!-- child 5 point map incarceration locals-->
-                            <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-
-                                <!-- child 6 choropleth % county incarcerated-->
-                                <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
-                                    <!--         
-        <footer class='px12 py12 bg-gray-faint txt-s'>
-            <ul>
-                <li>Explore the raw
-                    <a class='link' href='https://www.opendata.go.ke/'>data</a>
+    <footer class="row bg-warning text-dark py-2 px-2">
+        <div class="col">
+            <ul class="list-unstyled">
+                <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
+                <li>6 June 2021</li>
+                <li>Data source: 2018 <a href="https://data.census.gov/cedsci/">American
+                        Fact Finder</a>. Joined with county geometry boundary shapefiles from <a
+                        href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
+                        US Cartographic</a>
                 </li>
-                <li>Map authored by
-                    <a class='link' href='https://github.com/RCRamsey'>RCRamsey</a>
-                </li>
+
             </ul>
-        </footer> -->
+        </div>
+    </footer>
+    </div>
 
 
 
+    <!-- jQuery first and the minified version from jQuery site, not the slim minified version from Bootstrap's site.-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- then Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <!-- then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
+    <!-- then Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
+    </script>
+    <!-- always load our js after the js libraries -->
+    <script src='js/app.js'></script>
+    <!-- use some vanilla js to grab legend button and listen for click/toggle -->
+    <script src='js/toggle.js'></script>
 
-                                    <!-- replace with 1.0 version released May 2021 once this latest release is accessbile in Mapbox's API -->
-                                    <script async defer
-                                        src="https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.js"></script>
-                                    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-                                        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-                                        crossorigin=""></script>
-                                    <script
-                                        src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
-                                    </script>
 
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-                                    </script>
-                                    <script
-                                        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js">
-                                    </script>
-                                    <!-- always load our js after the js libraries -->
-                                    <script src='js/app.js'></script>
-                                    <!-- use some vanilla js to grab legend button and listen for click/toggle -->
-                                    <script src='js/toggle.js'></script>
+
 
 
 </body>
