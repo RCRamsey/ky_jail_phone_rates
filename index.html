@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-1 px-0">
+            <!-- <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-1 px-0">
                 <div class="card h-50">
                     <a target="_blank" href=".png"><img class-"card-img-top" src=".png"
                             alt="WMMT point map and reach range"></a>
@@ -117,9 +117,9 @@
                             WMMT Range and Incarceration Facility reach</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-             <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-2 px-0">
+             <!-- <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-2 px-0">
                  <div class="card h-50">
                      <a target="_blank" href=".png"><img class-"card-img-top" src=".png"
                              alt="WMMT video"></a>
@@ -128,7 +128,7 @@
                              WMMT's Calls From Home Program</p>
                      </div>
                  </div>
-             </div>
+             </div> -->
 
             <!-- 
 
@@ -143,29 +143,21 @@
     <div class="container">
         <!--🔥 best way to add gutter for y axis? -->
         <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
-            <div class="col">
-                <div class="p-3 border bg-light">Section f linegraph</div>
-            </div>
-            <div class="col">
-                <div class="p-3 border bg-light">Section g pie graph</div>
-            </div>
-            <div class="col">
-                <div class="p-3 border bg-light">Section h line graph</div>
-            </div>
-            <div class="col">
+                <div class="col py-3 border bg-light">Section f linegraph</div>
+        
+                <div class="col py-3 border bg-light">Section g pie graph</div>
+
+                <div class="col py-3 border bg-light">Section h line graph</div>
+
                 <!-- choropleth urban v rural/median incomes -->
-                <div class="p-3 border bg-light">Section I </div>
-            </div>
-            <div class="col">
+                <div class="col py-3 border bg-light">Section I </div>
+
                 <!-- jail locals point map -->
-                <div class="p-3 border bg-light">Section J</div>
-            </div>
-            <div class="col">
+                <div class="col py-3 border bg-light">Section J</div>
+
                 <!-- choropleth % pop incarcerated -->
-                <div class="p-3 border bg-light">Section K</div>
-            </div>
+                <div class="col py-3 border bg-light">Section K</div>
         </div>
-    </div>
     </div>
 
     <footer class="row bg-warning text-dark py-2 px-2">
@@ -203,10 +195,16 @@
         crossorigin=""></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
     </script>
+
+
+    <!-- js proportional map -->
+    <script src='js/proportion.js'></script>
+
     <!-- always load our js after the js libraries -->
-    <script src='js/app.js'></script>
+    <!-- <script src='js/app.js'></script> -->
+
     <!-- use some vanilla js to grab legend button and listen for click/toggle -->
-    <script src='js/toggle.js'></script>
+    <!-- <script src='js/toggle.js'></script> -->
 
 
 
