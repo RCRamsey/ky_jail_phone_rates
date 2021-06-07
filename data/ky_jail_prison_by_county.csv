@@ -1,4 +1,4 @@
-State,County,FIPS,Type,Facility,Physical Address,Provider,First Minute (instate),Additional Minutes (instate),15 Minute Call (instate),lat,long,address source,website
+State,County,FIPS,Type,Facility,Physical Address,Provider,first _minute,additional_minute,fifteen_minute,lat,long,address source,website
 Kentucky,Boyd County,019,Federal Prison,FCI Ashland (Low),SR 716 Ashland KY 41105,,,,,38.433568,-82.714635,poi,https://www.bop.gov/locations/institutions/ash/
 Kentucky,Clay County,051,Federal Prison,FCI Manchester (Medium),805 Fox Hollow Rd Manchester KY 40962,,,,,37.180407,-83.787746,poi,https://www.bop.gov/locations/institutions/man/
 Kentucky,Fayette County,067,Federal Prison,FMC Lexington,3301 Leestown Rd Lexington KY 40511,,,,,38.104617,-84.561791,poi,https://www.bop.gov/locations/institutions/lex/
