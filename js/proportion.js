@@ -107,7 +107,7 @@
         // Loop through first object
         for (var layer in layerInfo) {
             // Populate the second object with all features that
-            //🔥previously in 672 module 8 we used power-plants.js to store all of our data as and object and added var plants = that entire js file. Aren't the geoJson layers I created on lines 50-53 now stored as a JS object on line 83? Therefore in theory this should loop through and not produce an error...
+            //🔥previously in 672 module 8 we used power-plants.js to store all of our data as an object and added "var plants ="" to that entire js file. Aren't the geoJson layers I created on lines 50-53 now stored as a JS object on line 83? Therefore in theory this should loop through and not produce an error when calling that js object back on 83?
             geoJsonLayers[layer] = L.geoJson(layerInfo, {
                 // we convert to a layer
                 pointToLayer: function (feature, latlng) {
@@ -115,7 +115,7 @@
                 },
                 // exist in our first object
                 filter: function (feature) {
-                    if (feature.properties[layerInfo[layer].source]) {
+                    if (feature.properties.first_minute[layerInfo[layer].source]) {
                         return feature;
                     }
                 },
