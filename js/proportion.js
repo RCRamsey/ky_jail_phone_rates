@@ -18,7 +18,7 @@
     }).addTo(map);
 
 
-    omnivore.csv('data/ky_jail_by_county.csv')
+    omnivore.csv('data/rates_ky_jail_prison_by_county.csv')
         .on('ready', function (e) {
 
             //access to GeoJSON here
