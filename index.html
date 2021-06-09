@@ -91,9 +91,11 @@
         </div>
     </div>
 
+    <!-- body text -->
     <div clas="container">
         <div class="row">
-            <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-0 mx-auto">
+            <!-- Grid column -->
+            <div class="col-lg-6">
                 <div class="col-md-12">
 
                     <!-- Body text for page -->
@@ -108,9 +110,9 @@
                 </div>
             </div>
 
-            <!-- <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-1 px-0">
+            <!-- <div class="col-md-4 col-lg-4.5 col-xl-5  order-md-1 px-0">
                 <div class="card h-50">
-                    <a target="_blank" href=".png"><img class-"card-img-top" src=".png"
+                    <img class-"card-img-top" src=".png"
                             alt="WMMT point map and reach range"></a>
                     <div class="card-body">
                         <p class="card-text">
@@ -119,44 +121,97 @@
                 </div>
             </div> -->
 
-             <!-- <div class="col-md-4 col-lg-4.5 col-xl-5 order-md-2 px-0">
-                 <div class="card h-50">
-                     <a target="_blank" href=".png"><img class-"card-img-top" src=".png"
-                             alt="WMMT video"></a>
-                     <div class="card-body">
-                         <p class="card-text">
-                             WMMT's Calls From Home Program</p>
-                     </div>
-                 </div>
-             </div> -->
+            <!-- Grid column -->
+            <div class="col-lg-4 mb-4">
+                <div class="col-md-12">
+                    
+                    
+                    <!--Modal: WMMT map-->
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Body-->
+                                <div class="modal-body mb-0 p-0">
+                                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                        <iframe class="embed-responsive-item" src="graphics/temp_holder.jpg"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
 
-            <!-- 
+                                <!--Footer-->
+                                <div class="modal-footer justify-content-center">
+                                    <span class="mr-4">WMMT Range</span>
+                                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                                        data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    <!--Modal: Name-->
+                    <a><img class="img-fluid z-depth-1" src="graphics/temp_holder.jpg"
+                            alt="temporary_place_holder_image" data-toggle="modal" data-target="#modal1"></a>
+                </div>
 
-                timer/calculator for cost of looking at webpage for alloted time
-                section E<br>
-                section E<br>
-                section E<br> -->
+
+                <!--Modal: WMMT Video-->
+                <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+
+                        <!--Content-->
+                        <div class="modal-content">
+                            <!--Body-->
+                            <div class="modal-body mb-0 p-0">
+                                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                    <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/wTcNtgA6gHs" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <!--Footer-->
+                            <div class="modal-footer justify-content-center">
+                                <span class="mr-4">WMMT Video</span>
+                                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!--Modal: Name-->
+                <a><img class="img-fluid z-depth-1" src="graphics/temp_holder.jpg"
+                        alt="video" data-toggle="modal" data-target="#modal2"></a>
+            </div>
+            <!-- Grid column -->
+
+            <div class="card h-50">
+                <img class-"card-img-top" src=".png" alt="Embeded timer"></a>
+                <div class="card-body">
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
+
 
     <div class="container">
         <!--🔥 best way to add gutter for y axis? -->
         <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
-                <div class="col py-3 border bg-light">Section f linegraph</div>
-        
-                <div class="col py-3 border bg-light">Section g pie graph</div>
+            <div class="col py-3 border bg-light">Section f linegraph</div>
 
-                <div class="col py-3 border bg-light">Section h line graph</div>
+            <div class="col py-3 border bg-light">Section g pie graph</div>
 
-                <!-- choropleth urban v rural/median incomes -->
-                <div class="col py-3 border bg-light">Section I </div>
+            <div class="col py-3 border bg-light">Section h line graph</div>
 
-                <!-- jail locals point map -->
-                <div class="col py-3 border bg-light">Section J</div>
+            <!-- choropleth urban v rural/median incomes -->
+            <div class="col py-3 border bg-light">Section I </div>
 
-                <!-- choropleth % pop incarcerated -->
-                <div class="col py-3 border bg-light">Section K</div>
+            <!-- jail locals point map -->
+            <div class="col py-3 border bg-light">Section J</div>
+
+            <!-- choropleth % pop incarcerated -->
+            <div class="col py-3 border bg-light">Section K</div>
         </div>
     </div>
 
