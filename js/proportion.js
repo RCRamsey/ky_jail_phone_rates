@@ -4,7 +4,7 @@ var map = L.map('map', {
     // zoom: 7,
     minZoom: 7,
     maxZoom: 10,
-    maxBounds: L.latLngBounds([36.16, -89.45], [39.06, -81.62])
+   // maxBounds: L.latLngBounds([36.16, -89.45], [39.06, -81.62])
 });
 
 var accessToken = 'pk.eyJ1IjoicmNyYW1zZXkiLCJhIjoiY2tpN3UxOTJwMnh2ejJycXFja3NxemRocyJ9.cbhIjbrLpEGG0HkQS3fGLA'
@@ -17,7 +17,7 @@ L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?acce
 }).addTo(map);
 
 
-omnivore.csv('data/rates_ky_jail_prison_by_county.csv')
+omnivore.csv('data/rates_ky_jail_by_cnty.csv')
     .on('ready', function (e) {
 
         //access to GeoJSON here
@@ -32,50 +32,13 @@ omnivore.csv('data/rates_ky_jail_prison_by_county.csv')
     .on('error', function (e) {
         console.log(e.error[0].message)
     });
-//////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 //send argument 'e.target.toGeoJSON()' and drawMap accept as parameter 'data'
 function drawMap(data) {
     //access to data here
     console.log(data);
-    // const options = {
-    //     pointToLayer: function (feature, latlng) {
-    //         return L.circleMarker(latlng, {
-    //             opacity: 1,
-    //             weight: 2,
-    //             fillOpacity: 0,
-    //         })
-    //     }
-    // }
-    // // create 3 separate layers from GeoJSON data
-    // const minuteLayer = L.geoJson(data, options).addTo(map),
-    //     addMinuteLayer = L.geoJson(data, options).addTo(map);
-    // fifteenMinuteLayer = L.geoJson(data, options).addTo(map);
-
-    // // confirm 3 separate geoJSON layers created using omnivore to load csv
-    // console.log(minuteLayer);
-    // console.log(addMinuteLayer);
-    // console.log(fifteenMinuteLayer);
-
-    // // set style of individual layers when representing without proportion or dynamically
-    // minuteLayer.setStyle({
-    //     color: '#000000',
-    //     radius: 5,
-    // });
-    // addMinuteLayer.setStyle({
-    //     color: '#9c7b66',
-    //     radius: 6,
-    // });
-    // fifteenMinuteLayer.setStyle({
-    //     color: '#d16706',
-    //     radius: 7,
-    // });
-
-    // fit the bounds of the map to one of the layers
-    // map.fitBounds(minuteLayer.getBounds());
-
-    // // adjust zoom level of map
-    // map.setZoom(map.getZoom() - .4);
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////
     //dynamically create variable names for each geoJson layer and store as property names with geoJsonLayers object to access those layers and add to the map.
     // Define the desired layers and their colors to place
     // as JS object
@@ -94,28 +57,28 @@ function drawMap(data) {
         }
     };
 
+   
     // Build empty JS object
     var geoJsonLayers = {};
 
     var commonStyles = {
         weight: 1,
         stroke: 1,
-        opacity: .8
+        opacity: 1
     };
 
     // Loop through first object
     for (var layer in layerInfo) {
-        // Populate the second object with all features that
-        //🔥previously in 672 module 8 we used power-plants.js to store all of our data as an object and added "var plants ="" to that entire js file. Aren't the geoJson layers I created on lines 50-53 now stored as a JS object on line 83? Therefore in theory this should loop through and not produce an error when calling that js object back on 83?
 
         // 🌩 Use layerInfo as a lookup for property names and desired symbology and create the layers with the below method.
         geoJsonLayers[layer] = L.geoJson(data, {
-            // we convert to a layer
+
             pointToLayer: function (feature, latlng) {
                 return L.circleMarker(latlng, commonStyles);
             },
             // exist in our first object
             filter: function (feature) {
+                //🐔 would like to discuss how this drills down without specifying exact property of interest (for the next 3 console logging below)
                 console.log(layerInfo[layer].source)
                 if (feature.properties[layerInfo[layer].source]) {
                     console.log(feature)
@@ -124,29 +87,65 @@ function drawMap(data) {
             },
             // and match the style given in first object and with getRadius()
             style: function (feature) {
-                const x = feature.properties[layerInfo[layer].source]
-                console.log(x)
-                // 🌩 how to replace or remove the $ character to make a number
+                // const x = feature.properties[layerInfo[layer].source]
+                // console.log(x)
+                // // 🌩 how to replace or remove the $ character to make a number
                 return {
                     color: layerInfo[layer].color,
                     fillColor: layerInfo[layer].color,
-                    radius: getRadius(x)
+                //     radius: getRadius(x)
+
+                //radius was not populating any differently using the x var. I removed the $ from the csv and used:
+                    radius: getRadius(feature.properties[layerInfo[layer].source])
+                //or could remove $ on front end of data and use:
                 }
-            }
-        }).addTo(map);
+
+            },
+            //add user interaction for clicking 
+            onEachFeature: function (feature, layer) {
+                layer.on('mouseover', function (e) {
+                    e.target.setStyle({
+                        fillColor: 'white'
+                    });
+                    // layer.on('mouseout', function(e){
+                    //     //🐔original style for layer is now found where? need to ref here in order to reset style after mouse out.
+                    //     layerInfo.resetStyle(layer)
+                    // })
+                });
+                //create popup with Name of layer & cost by referencing geoJSON
+                var props=feature.properties
+               // console.log(props.Facility);
+               //🐔 cost will vary based on layer used, need loop to decide if only single layer on?
+                var popup = `Name: ${props.Facility}<br>
+                            Provider: ${props.Provider}<br>`
+                        //     // 1st Minute: $ ${}<br>
+                        //    Additional Minute: $ ${props.additionalMinute}<br>
+                        // //    Fifteen Minute: $ ${props.fifteen_minute}` 
+                           layer.bindTooltip(popup)
+            }}).addTo(map);
     }
 
+
+    //🚩map bounds too zoomed in but it's based on this and not set zoom above. Options?
     map.fitBounds(geoJsonLayers.minuteLayer.getBounds());
 
-    function getRadius(val) {
-        var radius = Math.sqrt(val / Math.PI);
-        return radius * .8;
+    //radius was not differing between the circles based on the value being pulled from the layer. All were drawing the same radius no matter the value
+    // function getRadius(val) {
+    //     var radius = Math.sqrt(val / Math.PI);
+    //     return radius * 10;
+    // }
+
+    // altered csv to remove $ and used: 
+    function getRadius(area) {
+        var radius = Math.sqrt(area/Math.PI);
+        return radius * 20;
     }
 
+    //leaflet layer control with label text styled
     var sourcesLabels = {
-        "1st Minute": geoJsonLayers.minuteLayer,
-        "Additional Minute": geoJsonLayers.addMinuteLayer,
-        "Fifteen Minute": geoJsonLayers.fifteenMinuteLayer
+        "<b style ='color:#000000'>1st Minute</b>": geoJsonLayers.minuteLayer,
+        "<b style ='color:#9c7b66'>Additional Minute</b>": geoJsonLayers.addMinuteLayer,
+        "<b style ='color:#d16706'>Fifteen Minute</b>": geoJsonLayers.fifteenMinuteLayer
     }
 
     L.control.layers(null, sourcesLabels, {
