@@ -62,6 +62,13 @@ hr.large {
     color: #d16706;
 }
 
+.page-header{
+    height: 60 px;
+    margin-top: 0px;
+    background-size: cover;
+    background-image: url(./graphics/jail_door_mcgrady.jpg);
+}
+
 /* absolute position within relative container in absolute position 30 px and 14 px */
 #legend-button {
     bottom: 30px;

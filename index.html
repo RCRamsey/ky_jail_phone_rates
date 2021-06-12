@@ -72,15 +72,21 @@
 
 
     <!-- Title Section -->
+    <!-- 🔥 text to appear over top of image have with code commented out end up with image above text not under. tried using css to place under text as background in a page-header div class and img dissappears.-->
     <header class>
-        <div class="container text-center mt-5 p-4">
+        <div class="container text-center mt-5 p-4" 
+        <!-- <div class="page-header" -->
+
+            <img src="graphics/jail_door_mcgrady.jpg" alt="Jail door by Mcgrady" style="width:100%;">
             <!-- <div class="row bg-secondary text-dark py-3"> -->
             <h1>Rates & Fees STILL Apply</h1>
             <blockquote class="blockquote">
                 <p class="mb-0">2018 Kentucky County Phone Rates for 32 Jails</p>
             </blockquote>
         </div>
+    </div>
     </header>
+
 
     <!--Proportional fees/rates ky map-->
     <div class="container mx-auto my-auto ">
@@ -124,8 +130,8 @@
             <!-- Grid column -->
             <div class="col-lg-4 mb-4">
                 <div class="col-md-12">
-                    
-                    
+
+
                     <!--Modal: WMMT map-->
                     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                         aria-hidden="true">
@@ -182,54 +188,54 @@
                     </div>
                 </div>
                 <!--Modal: Name-->
-                <a><img class="img-fluid z-depth-1" src="graphics/temp_holder.jpg"
-                        alt="video" data-toggle="modal" data-target="#modal2"></a>
+                <a><img class="img-fluid z-depth-1" src="graphics/temp_holder.jpg" alt="video" data-toggle="modal"
+                        data-target="#modal2"></a>
             </div>
             <!-- Grid column -->
 
             <div class="card h-50">
                 <img class-"card-img-top" src=".png" alt="Embeded timer"></a>
                 <div class="card-body">
-                    
+
                 </div>
             </div>
         </div>
 
 
-    <div class="container">
-        <!--🔥 best way to add gutter for y axis? -->
-        <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
-            <div class="col py-3 border bg-light">Section f linegraph</div>
+        <div class="container">
+            <!--🔥 best way to add gutter for y axis? -->
+            <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
+                <div class="col py-3 border bg-light">Section f linegraph</div>
 
-            <div class="col py-3 border bg-light">Section g pie graph</div>
+                <div class="col py-3 border bg-light">Section g pie graph</div>
 
-            <div class="col py-3 border bg-light">Section h line graph</div>
+                <div class="col py-3 border bg-light">Section h line graph</div>
 
-            <!-- choropleth urban v rural/median incomes -->
-            <div class="col py-3 border bg-light">Section I </div>
+                <!-- choropleth urban v rural/median incomes -->
+                <div class="col py-3 border bg-light">Section I </div>
 
-            <!-- jail locals point map -->
-            <div class="col py-3 border bg-light">Section J</div>
+                <!-- jail locals point map -->
+                <div class="col py-3 border bg-light">Section J</div>
 
-            <!-- choropleth % pop incarcerated -->
-            <div class="col py-3 border bg-light">Section K</div>
+                <!-- choropleth % pop incarcerated -->
+                <div class="col py-3 border bg-light">Section K</div>
+            </div>
         </div>
-    </div>
 
-    <footer class="row bg-warning text-dark py-2 px-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
-                <li>6 June 2021</li>
-                <li>Data source: 2018 <a href="https://data.census.gov/cedsci/">American
-                        Fact Finder</a>. Joined with county geometry boundary shapefiles from <a
-                        href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
-                        US Cartographic</a>
-                </li>
+        <footer class="row bg-warning text-dark py-2 px-2">
+            <div class="col">
+                <ul class="list-unstyled">
+                    <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
+                    <li>6 June 2021</li>
+                    <li>Data source: 2018 <a href="https://data.census.gov/cedsci/">American
+                            Fact Finder</a>. Joined with county geometry boundary shapefiles from <a
+                            href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
+                            US Cartographic</a>
+                    </li>
 
-            </ul>
-        </div>
-    </footer>
+                </ul>
+            </div>
+        </footer>
     </div>
 
 
