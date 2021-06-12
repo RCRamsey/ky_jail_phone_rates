@@ -86,7 +86,7 @@ https://www.cdc.gov/nchs/data_access/urban_rural.htm#Data_Files_and_Documentatio
 https://www.census.gov/search-results.html?searchType=web&cssp=SERP&q=median%20income%20kentucky%20county
 
 *Description*  
-The original data was for counties nationwide. Will be pulling KY counties from this data using the same 6 designations of 1 Large Central Metro (inner city) 2 Large Fringe Metro (suburban) 3 Medium Metro 4 Small Metro 5 Micropolitan 6 Non-core. This will demonstrate the potential isolation of the locations and the potential financial strain put on the county population if their family member is incarcerated locally.
+The original data was for counties nationwide. Will be pulling KY counties from this data using the same 6 designations of 1 Large Central Metro (inner city) 2 Large Fringe Metro (suburban) 3 Medium Metro 4 Small Metro 5 Micropolitan 6 Non-core. This will demonstrate the potential isolation of the locations (how far a drive for someone to visit and talk vs phone call) and the potential financial strain put on the county population if their family member is incarcerated locally.
 Data can be found *assignment/data/NCHSURCodes2013_raw.csv* & *assignment/data/2015_19_med_income_cnty.csv*
 
 ## Part II: Topic & Geographic Phenomena 
