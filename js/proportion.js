@@ -27,7 +27,7 @@ omnivore.csv('data/rates_ky_jail_by_cnty.csv')
         console.log(e.target.toGeoJSON())
 
         drawMap(e.target.toGeoJSON());
-        drawLegend(e.target.toGeoJSON());
+       // drawLegend(e.target.toGeoJSON());
     })
 
     .on('error', function (e) {
@@ -69,6 +69,7 @@ function drawMap(data) {
     };
 
     // Loop through first object
+    //assign a var layer for each within layerInfo of objects by looping
     for (var layer in layerInfo) {
 
         // 🌩 Use layerInfo as a lookup for property names and desired symbology and create the layers with the below method.
@@ -79,7 +80,6 @@ function drawMap(data) {
             },
             // exist in our first object
             filter: function (feature) {
-                //🐔 would like to discuss how this drills down without specifying exact property of interest (for the next 3 console logging below)
                 console.log(layerInfo[layer].source)
                 if (feature.properties[layerInfo[layer].source]) {
                     console.log(feature)
@@ -108,10 +108,10 @@ function drawMap(data) {
                     e.target.setStyle({
                         fillColor: 'white'
                     });
-                    // layer.on('mouseout', function(e){
-                    //     //🐔original style for layer is now found where? need to ref here in order to reset style after mouse out.
-                    //     layerInfo.resetStyle(layer)
-                    // })
+                    layer.on('mouseout', function(e){
+                        //🐔original style for layer is now found where? need to ref here in order to reset style after mouse out.
+                        (layerInfo[layer].source).resetStyle(layerInfo[layer].color)
+                    })
                 });
                 //create popup with Name of layer & cost by referencing geoJSON
                 var props=feature.properties
@@ -127,7 +127,7 @@ function drawMap(data) {
     }
 
 
-    //🐔 map bounds too zoomed in but it's based on this and not set zoom above. Options?
+    //🐔 map bounds too zoomed in. Options?
     map.fitBounds(geoJsonLayers.minuteLayer.getBounds());
 
     //radius was not differing between the circles based on the value being pulled from the layer. All were drawing the same radius no matter the value
@@ -155,7 +155,7 @@ function drawMap(data) {
 }// end drawMap()
 
 
-// //🐔 drawLegend function
+// // drawLegend function
 // function drawLegend(data){
 //     console.log(data);
 //     //create leaflet control for the legend
@@ -178,7 +178,7 @@ function drawMap(data) {
 //     legendControl.addTo(map);
 
 
-//  // 🐔 loop through all features (need to loop through data in order for remaning lines of setting diameter size for circle legends to populate)
+//  // 🐔 loop through all features (do I need to create the layerInfo to loop through again?)
 //  data.features.forEach(function (time) {
 
 //      // for each time in a facility
