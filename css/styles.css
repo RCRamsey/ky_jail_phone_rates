@@ -74,6 +74,18 @@ hr.large {
     background-image: url(./graphics/jail_door_mcgrady.jpg);
 }
 
+.tickcol{
+    float: left;
+    width: 30%;
+    font-size: 17.5px;
+    position: relative;
+    transform: translateY(8%);
+    margin: 2% 0 2% 0;
+}
+
+div.calculator{
+    text-align: center;
+}
 /* absolute position within relative container in absolute position 30 px and 14 px */
 #legend-button {
     bottom: 30px;
