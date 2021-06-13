@@ -74,8 +74,8 @@
     <!-- Title Section -->
     <!-- 🔥 text to appear on top of image. Tried using css to place under text as background in a page-header div class but img dissappears.-->
     <header class>
-        <div class="container-fluid text-center mt-5 p-4" <!-- <div class="page-header" -->
-
+        <div class="container-fluid text-center mt-5 p-4" <div class="page-header" <!-- <div
+            class="container p-3 my-3 border"> -->
             <img src="graphics/jail_door_mcgrady.jpg" alt="Jail door by Mcgrady" style="width:100%;">
             <!-- <div class="row bg-secondary text-dark py-3"> -->
             <h1>Rates & Fees STILL Apply?!</h1>
@@ -87,46 +87,40 @@
     </header>
 
 
-    <!--Proportional fees/rates ky map-->
+    <!--Proportional fees/rates ky map centered page-->
     <div class="container mx-auto my-auto border ">
         <div class="row">
-            <div class="col-md-12 col-lg-12 col-xl-12 order-md-2 px-0">
+            <div class="col-sm-12 order-md-2 px-0">
                 <div id="map"></div>
             </div>
         </div>
     </div>
 
-    <!-- text suppose to appear on left hand screen-->
+    <!-- text to appear on left hand screen-->
     <div clas="container">
         <div class="row">
+
             <!-- Grid column -->
             <div class="col-md-6">
-                <div class="col-md-12">
 
-                    <!-- Body text for page -->
-                    <p>There are no mistakes. You can fix anything that happens. There is no right or wrong - as long as
-                        it
-                        makes you happy and doesn't hurt anyone.</p>
+                <!-- Body text for page -->
+                <p>There are no mistakes. You can fix anything that happens. There is no right or wrong - as long as
+                    it makes you happy and doesn't hurt anyone.</p>
+                <p>That's crazy. A fan brush is a fantastic piece of equipment. Use it. Make friends with it.</p>
+                <li>list 1</li>
+                <li>list 2</li>
+            </div>
 
-                    <p>That's crazy. A fan brush is a fantastic piece of equipment. Use it. Make friends with it.</p>
-
-                    <li>list 1</li>
-                    <li>list 2</li>
-                </div>
-            
-
-            <!-- Grid column and 3 elements to appear on the right half of the screen opposite the body text. So body text and these 3 elements are suppose to split the screen in half. The three elements (WMMT map, Video, Timer) are to be stacked one above the other in the column.-->
-            <div class="col-lg-4 mb-4">
-                <div class="col-md-12">
-
+            <!-- Grid column and 3 elements (WMMT map, Video, Timer) stacked one above the other in the column.-->
+            <div class="col-md-6 mb-4">
 
                     <!--Modal: WMMT map-->
                     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
-                            <!--Content-->
+                            <!--Modal: WMMT map Content-->
                             <div class="modal-content">
-                                <!--Body-->
+                                <!--Modal: WMMT map Body-->
                                 <div class="modal-body mb-0 p-0">
                                     <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
                                         <iframe class="embed-responsive-item" src="graphics/wmmt_range.png"
@@ -134,7 +128,7 @@
                                     </div>
                                 </div>
 
-                                <!--Footer-->
+                                <!--Modal: WMMT map Footer-->
                                 <div class="modal-footer justify-content-center">
                                     <span class="mr-4">WMMT Range</span>
                                     <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
@@ -144,10 +138,9 @@
                             <!--/.Content-->
                         </div>
                     </div>
-                    <!--Modal: Name-->
+                    <!--Modal: WMMT map actual-->
                     <a><img class="img-fluid z-depth-1" src="graphics/wmmt_range.png" alt="temporary_place_holder_image"
                             data-toggle="modal" data-target="#modal1"></a>
-                </div>
 
 
                 <!--Modal: WMMT Video-->
@@ -155,17 +148,17 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
 
-                        <!--Content-->
+                        <!--Modal: WMMT Video Content-->
                         <div class="modal-content">
                             <!--Body-->
                             <div class="modal-body mb-0 p-0">
                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
                                     <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/wTcNtgA6gHs" allowfullscreen></iframe>
+                                        src="https://vimeo.com/44433312" allowfullscreen></iframe>
                                 </div>
                             </div>
 
-                            <!--Footer-->
+                            <!--Modal: WMMT Video Footer-->
                             <div class="modal-footer justify-content-center">
                                 <span class="mr-4">WMMT Video</span>
                                 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
@@ -175,109 +168,109 @@
                         <!--/.Content-->
                     </div>
                 </div>
-                <!--Modal: Name-->
-                <a><img class="img-fluid z-depth-1" src="graphics/temp_holder.jpg" alt="video" data-toggle="modal"
+                <!--Modal: WMMT Video actual-->
+                <a><img class="img-fluid z-depth-1" src="graphics/calls_from_home.png" alt="Calls From Home video" data-toggle="modal"
                         data-target="#modal2"></a>
-            </div>
-            <!-- Grid column -->
 
-            <div class="card h-50">
-                <img class-"card-img-top" src=".png" alt="Embeded timer"></a>
-                <div class="card-body">
 
+                <!-- Embeded count up timer -->
+                <!-- 🔥need to correct the margin/padding so thumbnails don't end up on top of this -->
+                <div class="card h-50 bg-secondary">
+                    <img class-"card-img-top" src=".png" alt="Embeded timer"></a>
+                    <div class="card-body"> </div>
                 </div>
+
             </div>
         </div>
-</div>
 
         <div class="container">
             <!--🔥 best way to add gutter for y axis? -->
             <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
 
-                <div class="col py-3 border bg-light">
+                <div class="col my-3 border bg-light">
                     <img src="graphics/convicted_status_1978-2013.png" class="img-thumbnail"
                         alt="Conviction Status of those incarcerated">
                 </div>
 
-                 <div class="col py-3 border bg-light">
-                     <img src="graphics/phone_rates_2008_2018.png" class="img-thumbnail"
-                         alt="2008-2018 Prison & Jail Phone Rates Line Graph">
-                 </div>
+                <div class="col my-3 border bg-light">
+                    <img src="graphics/phone_rates_2008_2018.png" class="img-thumbnail"
+                        alt="2008-2018 Prison & Jail Phone Rates Line Graph">
+                </div>
 
-                <div class="col py-3 border bg-light">
+                <div class="col my-3 border bg-light">
                     <img src="graphics/incarc_2018_pie.png" class="img-thumbnail"
                         alt="Pie Chart of KY's incarcerated populations by facility type">
                 </div>
 
-               
+
 
 
 
                 <!-- choropleth urban v rural/median incomes -->
-                <div class="col py-3 border bg-light">
+                <div class="col my-3 border bg-light">
                     <img src="graphics/ky_urban_rural_jails.png" class="img-thumbnail"
                         alt="KY Urban vs Rural Choropleth with Jail Locations">
                 </div>
 
                 <!-- jail locals point map -->
-                <div class="col py-3 border bg-light">
+                <div class="col my-3 border bg-light">
                     <img src="graphics/ky_jail_prison_locals.png" class="img-thumbnail"
-                    alt="KY Prison vs Jail Locations by County">
+                        alt="KY Prison vs Jail Locations by County">
                 </div>
 
                 <!-- choropleth % pop incarcerated -->
-                <div class="col py-3 border bg-light">
+                <div class="col my-3 border bg-light">
                     <img src="graphics/incarc_pop_county.png" class="img-thumbnail"
                         alt="% of KY County Population Incarcerated in Jail Choropleth">
                 </div>
 
+            </div>
+
+            <footer class="row text-dark py-2 px-2">
+                <div class="col">
+                    <ul class="list-unstyled">
+                        <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
+                        <li>6 June 2021</li>
+                        <li>Data source: 2018 <a href="https://data.census.gov/cedsci/">American
+                                Fact Finder</a>. Joined with county geometry boundary shapefiles from <a
+                                href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
+                                US Cartographic</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </footer>
         </div>
 
-        <footer class="row text-dark py-2 px-2">
-            <div class="col">
-                <ul class="list-unstyled">
-                    <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
-                    <li>6 June 2021</li>
-                    <li>Data source: 2018 <a href="https://data.census.gov/cedsci/">American
-                            Fact Finder</a>. Joined with county geometry boundary shapefiles from <a
-                            href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
-                            US Cartographic</a>
-                    </li>
-
-                </ul>
-            </div>
-        </footer>
-    </div>
 
 
+        <!-- jQuery first and the minified version from jQuery site, not the slim minified version from Bootstrap's site.-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <!-- then Popper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+        <!-- then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+        </script>
+        <!-- then Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+        <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
+        </script>
 
-    <!-- jQuery first and the minified version from jQuery site, not the slim minified version from Bootstrap's site.-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- then Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <!-- then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
-    </script>
-    <!-- then Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
-    </script>
 
+        <!-- js proportional map -->
+        <script src='js/proportion.js'></script>
 
-    <!-- js proportional map -->
-    <script src='js/proportion.js'></script>
+        <!-- always load our js after the js libraries -->
+        <!-- <script src='js/app.js'></script> -->
 
-    <!-- always load our js after the js libraries -->
-    <!-- <script src='js/app.js'></script> -->
-
-    <!-- use some vanilla js to grab legend button and listen for click/toggle -->
-    <!-- <script src='js/toggle.js'></script> -->
+        <!-- use some vanilla js to grab legend button and listen for click/toggle -->
+        <!-- <script src='js/toggle.js'></script> -->
 
 
 
