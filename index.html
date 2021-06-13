@@ -71,37 +71,40 @@
 <body>
 
 
-    <!-- Title Section -->
-    <!-- 🔥 text to appear on top of image. Tried using css to place under text as background in a page-header div class but img dissappears.-->
-    <header class>
-        <div class="container-fluid text-center mt-5 p-4" <div class="page-header" <!-- <div
-            class="container p-3 my-3 border"> -->
-            <img src="graphics/jail_door_mcgrady.jpg" alt="Jail door by Mcgrady" style="width:100%;">
-            <!-- <div class="row bg-secondary text-dark py-3"> -->
+    <!-- Title Container -->
+    <!-- 🔥 text to appear on top of image. image to stretch the entire background with gradient fade defined in css. -->
+    <header class="bg-secondary text-white">
+        <div class="container text-center">
+            
             <h1>Rates & Fees STILL Apply?!</h1>
+             
             <blockquote class="blockquote">
-                <p class="mb-0">2018 Kentucky County Phone Rates for 32 Jails</p>
-            </blockquote>
-        </div>
+                 <p class="mb-0">2018 Kentucky County Phone Rates for 32 Jails</p>
+             </blockquote>
+            
+             <img src="graphics/jail_door_mcgrady.jpg" width="500px" alt="Jail door by Mcgrady">
+           
         </div>
     </header>
 
 
-    <!--Proportional fees/rates ky map centered page-->
-    <div class="container mx-auto my-auto border ">
+    <!--Proportional fees/rates Map Container-->
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12 order-md-2 px-0">
+            <div class="col-sm-12 px-0">
                 <div id="map"></div>
             </div>
         </div>
     </div>
 
-    <!-- text to appear on left hand screen-->
+     <!-- Body Text/3 element container. -->
+    <!-- Text to appear on left hand screen-->
     <div clas="container">
         <div class="row">
 
             <!-- Grid column -->
             <div class="col-md-6">
+                <div class="col md--6 offset-md-2">
 
                 <!-- Body text for page -->
                 <p>There are no mistakes. You can fix anything that happens. There is no right or wrong - as long as
@@ -109,38 +112,40 @@
                 <p>That's crazy. A fan brush is a fantastic piece of equipment. Use it. Make friends with it.</p>
                 <li>list 1</li>
                 <li>list 2</li>
+                
+                </div>
             </div>
 
             <!-- Grid column and 3 elements (WMMT map, Video, Timer) stacked one above the other in the column.-->
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6">
 
-                    <!--Modal: WMMT map-->
-                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <!--Modal: WMMT map Content-->
-                            <div class="modal-content">
-                                <!--Modal: WMMT map Body-->
-                                <div class="modal-body mb-0 p-0">
-                                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                                        <iframe class="embed-responsive-item" src="graphics/wmmt_range.png"
-                                            allowfullscreen></iframe>
-                                    </div>
-                                </div>
-
-                                <!--Modal: WMMT map Footer-->
-                                <div class="modal-footer justify-content-center">
-                                    <span class="mr-4">WMMT Range</span>
-                                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                                        data-dismiss="modal">Close</button>
+                <!--Modal: WMMT map-->
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <!--Modal: WMMT map Content-->
+                        <div class="modal-content">
+                            <!--Modal: WMMT map Body-->
+                            <div class="modal-body mb-0 p-0">
+                                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                    <iframe class="embed-responsive-item" src="graphics/wmmt_range.png"
+                                        allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <!--/.Content-->
+
+                            <!--Modal: WMMT map Footer-->
+                            <div class="modal-footer justify-content-center">
+                                <span class="mr-4">WMMT Range</span>
+                                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                                    data-dismiss="modal">Close</button>
+                            </div>
                         </div>
+                        <!--/.Content-->
                     </div>
-                    <!--Modal: WMMT map actual-->
-                    <a><img class="img-fluid z-depth-1" src="graphics/wmmt_range.png" alt="temporary_place_holder_image"
-                            data-toggle="modal" data-target="#modal1"></a>
+                </div>
+                <!--Modal: WMMT map actual-->
+                <a><img class="img-fluid z-depth-1" src="graphics/wmmt_range.png" alt="temporary_place_holder_image"
+                        data-toggle="modal" data-target="#modal1"></a>
 
 
                 <!--Modal: WMMT Video-->
@@ -153,8 +158,8 @@
                             <!--Body-->
                             <div class="modal-body mb-0 p-0">
                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                                    <iframe class="embed-responsive-item"
-                                        src="https://vimeo.com/44433312" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="https://vimeo.com/44433312"
+                                        allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -169,8 +174,8 @@
                     </div>
                 </div>
                 <!--Modal: WMMT Video actual-->
-                <a><img class="img-fluid z-depth-1" src="graphics/calls_from_home.png" alt="Calls From Home video" data-toggle="modal"
-                        data-target="#modal2"></a>
+                <a><img class="img-fluid z-depth-1" src="graphics/calls_from_home.png" alt="Calls From Home video"
+                        data-toggle="modal" data-target="#modal2"></a>
 
 
                 <!-- Embeded count up timer -->
@@ -179,7 +184,7 @@
                     <img class-"card-img-top" src=".png" alt="Embeded timer"></a>
                     <div class="card-body"> </div>
                 </div>
-
+                
             </div>
         </div>
 
