@@ -16,8 +16,37 @@ L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?acce
     accessToken: accessToken
 }).addTo(map);
 
+const lz = {
+    "first minute": {
+        color: '#000000',
+        values: []
+    },
+    "additional minutes": {
+        color: '#9c7b66',
+        values: []
+    },
+    "fifteen minute": {
+        color: '#d16706',
+        values: []
+    }
+};
 
-omnivore.csv('data/rates_ky_jail_by_cnty.csv')
+const layer1 = $.getJSON('data/ky-counties.geojson', function(data) {
+
+    const kyCounties = L.geoJson(data, {
+
+        // options
+
+    }).addTo(map)
+
+    map.fitBounds(kyCounties.getBounds())
+
+})
+
+
+$.when(layer1)
+    .then( function () {
+        omnivore.csv('data/rates_ky_jail_by_cnty.csv')
     .on('ready', function (e) {
 
         //access to GeoJSON here
@@ -33,34 +62,39 @@ omnivore.csv('data/rates_ky_jail_by_cnty.csv')
     .on('error', function (e) {
         console.log(e.error[0].message)
     });
+    })
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 //send argument 'e.target.toGeoJSON()' and drawMap accept as parameter 'data'
 function drawMap(data) {
     //access to data here
-    console.log(data);
-    
+
+    data.features.forEach(function(feature) {
+        const props = feature.properties
+        if (props['first minute'] != null) {
+            lz['first minute'].values.push(+props['first minute'])
+        }
+    })
+
+  lz['first minute'].average = lz['first minute'].values.reduce(function (sum, value) {
+        return sum + value;
+    }, 0) / lz['first minute'].values.length;
+
+console.log(lz['first minute'].average)
+
+
+
+
     /////////////////////////////////////////////////////////////////////////////////////////////
     //dynamically create variable names for each geoJson layer and store as property names with geoJsonLayers object to access those layers and add to the map.
     // Define the desired layers and their colors to place
     // as JS object
-    var layerInfo = {
-        minuteLayer: {
-            source: "first minute",
-            color: '#000000'
-        },
-        addMinuteLayer: {
-            source: "additional minutes",
-            color: '#9c7b66'
-        },
-        fifteenMinuteLayer: {
-            source: "fifteen minute",
-            color: '#d16706'
-        }
-    };
-
    
-    // Build empty JS object
-    var geoJsonLayers = {};
+    // // Build empty JS object
+    // var geoJsonLayers = {};
 
     var commonStyles = {
         weight: 1,
@@ -70,34 +104,35 @@ function drawMap(data) {
 
     // Loop through first object
     //assign a var layer for each within layerInfo of objects by looping
-    for (var layer in layerInfo) {
+    // for (var layer in layerInfo) {
 
         // 🌩 Use layerInfo as a lookup for property names and desired symbology and create the layers with the below method.
-        geoJsonLayers[layer] = L.geoJson(data, {
+        const cost = L.geoJson(data, {
 
             pointToLayer: function (feature, latlng) {
+                // console.log(latlng)
                 return L.circleMarker(latlng, commonStyles);
             },
-            // exist in our first object
-            filter: function (feature) {
-                console.log(layerInfo[layer].source)
-                if (feature.properties[layerInfo[layer].source]) {
-                    console.log(feature)
-                    return feature;
-                }
-            },
+            // // exist in our first object
+            // filter: function (feature) {
+    
+            //     if (feature.properties[layerInfo[layer].source]) {
+            //         console.log(feature)
+            //         return feature;
+            //     }
+            // },
             // and match the style given in first object and with getRadius()
             style: function (feature) {
                 // const x = feature.properties[layerInfo[layer].source]
-                // console.log(x)
+                // console.log(feature)
                 // // 🌩 how to replace or remove the $ character to make a number
                 return {
-                    color: layerInfo[layer].color,
-                    fillColor: layerInfo[layer].color,
+                    color: lz['first minute'].color,
+                    fillColor: lz['first minute'].color,
                 //     radius: getRadius(x)
 
                 //radius was not populating any differently using the x var. I removed the $ from the csv and used:
-                    radius: getRadius(feature.properties[layerInfo[layer].source])
+                    radius: getRadius(feature.properties['first minute'])
                 //or could remove $ on front end of data and use:
                 }
 
@@ -110,25 +145,39 @@ function drawMap(data) {
                     });
                     layer.on('mouseout', function(e){
                         //🐔original style for layer is now found where? need to ref here in order to reset style after mouse out.
-                        (layerInfo[layer].source).etStyle(layerInfo[layer].color)
+                        // layer.setStyle(lz.color)/
+
+                        e.target.setStyle({
+                            fillColor: lz['first minute'].color
+                        });
                     })
                 });
                 //create popup with Name of layer & cost by referencing geoJSON
                 var props=feature.properties
+                
+                for (i in lz) {
+                    if (lz[i].average) {
+                        lz[i].compare = (props[i] / lz[i].average) * 100
+                    }
+                }
+
                // console.log(props.Facility);
                //🐔 cost will vary based on layer used, need loop to decide if only single layer on?
                 var popup = `Name: ${props.Facility}<br>
-                            Provider: ${props.Provider}<br>`
+                            Provider: ${props.Provider}<br>
+                            Rate first minute:  ${props['first minute']}, ${lz['first minute'].compare}% of average`
                         //     // 1st Minute: $ ${}<br>
                         //    Additional Minute: $ ${props.additionalMinute}<br>
                         // //    Fifteen Minute: $ ${props.fifteen_minute}` 
                            layer.bindTooltip(popup)
-            }}).addTo(map);
-    }
+            }
+        }).addTo(map);
+        //🐔 map bounds too zoomed in. Options?
+        // map.fitBounds(cost.getBounds());
+    } // end drawMap()
 
 
-    //🐔 map bounds too zoomed in. Options?
-    map.fitBounds(geoJsonLayers.minuteLayer.getBounds());
+    
 
     //radius was not differing between the circles based on the value being pulled from the layer. All were drawing the same radius no matter the value
     // function getRadius(val) {
@@ -143,16 +192,16 @@ function drawMap(data) {
     }
 
     //leaflet layer control with label text styled
-    var sourcesLabels = {
-        "<b style ='color:#000000'>1st Minute</b>": geoJsonLayers.minuteLayer,
-        "<b style ='color:#9c7b66'>Additional Minute</b>": geoJsonLayers.addMinuteLayer,
-        "<b style ='color:#d16706'>Fifteen Minute</b>": geoJsonLayers.fifteenMinuteLayer
-    }
+    // var sourcesLabels = {
+    //     "<b style ='color:#000000'>1st Minute</b>": geoJsonLayers.minuteLayer,
+    //     "<b style ='color:#9c7b66'>Additional Minute</b>": geoJsonLayers.addMinuteLayer,
+    //     "<b style ='color:#d16706'>Fifteen Minute</b>": geoJsonLayers.fifteenMinuteLayer
+    // }
 
-    L.control.layers(null, sourcesLabels, {
-        collapsed: false
-    }).addTo(map);
-}// end drawMap()
+    // L.control.layers(null, sourcesLabels, {
+    //     collapsed: false
+    // }).addTo(map);
+
 
 
 // // drawLegend function
