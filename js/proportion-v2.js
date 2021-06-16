@@ -9,10 +9,15 @@ var map = L.map('map', {
 
 var accessToken = 'pk.eyJ1IjoicmNyYW1zZXkiLCJhIjoiY2tpN3UxOTJwMnh2ejJycXFja3NxemRocyJ9.cbhIjbrLpEGG0HkQS3fGLA'
 
-L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}`, {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    id: 'light-v10',
+// L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}`, {
+//     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+//     maxZoom: 18,
+//     id: 'light-v10',
+//     accessToken: accessToken
+// }).addTo(map);
+
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
     accessToken: accessToken
 }).addTo(map);
 
@@ -34,11 +39,13 @@ const lz = {
 const layer1 = $.getJSON('data/ky-counties.geojson', function (data) {
 
     const kyCounties = L.geoJson(data, {
-
-        // options
+    
+     "color": "#000",
+     "opacity": 0.08, 
 
     }).addTo(map)
 
+    console.log(kyCounties)
     map.fitBounds(kyCounties.getBounds())
 
 })
@@ -159,9 +166,9 @@ function drawMap(data) {
 
             layer.bindTooltip(popup)
 
-        
+
         }
-        
+
     }).addTo(map);
     //🐔 map bounds too zoomed in. Options?
     // map.fitBounds(cost.getBounds());
