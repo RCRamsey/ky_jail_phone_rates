@@ -81,13 +81,14 @@ function drawMap(data) {
 
     //calculate average of values pushed into the array using:
     //.reduce reduces the array to a single value based on a provided a function occurring for each value (left-right) in the array. Then returns the value of function stored. This does not change the original array.
-    //sum of the array and values from the array are passed into the function and the sum is added to each value and returned.
-    //.length calculates how many numbers in the array
-    //Returned value from .reduce function (all newly calculated array values) are then divided by how many numbers are in the array. 
+    //sum of array and values of array returned
+    //.length calculates how many numbers in the original array
+    //Returned sum from .reduce function is then divided by how many numbers are in the array. to caluclate average of array 
+    //🐔 what does the ,0 do on line 92?
     
   lz['first minute'].average = 
     lz['first minute'].values.reduce(function (sum, value) {
-            return sum + value;
+            return sum + value; //is this just returning the sum AND the original values for later use?
         }, 0) / lz['first minute'].values.length; 
 
 console.log(lz['first minute'].average)
@@ -141,7 +142,7 @@ console.log(lz['first minute'].average)
                 
                 for (i in lz) {
                     if (lz[i].average) {
-                        lz[i].compare = (props[i] / lz[i].average) * 100
+                        lz[i].compare = (props[i] / lz[i].average) * 100 //calculates how the property compares to the average amount of the sum of the property
                     }
                 }
 
