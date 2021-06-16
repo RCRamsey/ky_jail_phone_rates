@@ -20,6 +20,7 @@ adobe color confirmed color blind safe
     z-index: 1000;
 }
 
+
 header {
     padding: 154px 0 100px;
     background: linear-gradient (45 deg, rgba(39, 43, 48, 0.8) 0%, rgba(39,43,48, 0.9) 100%), url ('../graphics/jail_door_mcgrady.jpg');
@@ -39,9 +40,7 @@ body{
     font-family: "Overpass", Sans-Serif;
     font-size: 10px
 }
-.legend-large, .legend-small {
-    border-radius: 50%;
-}
+
 
 hr.small,
 hr.large {
@@ -55,17 +54,17 @@ hr.large {
     /* overwrite assembly.css rule */
 }
 
+/* attempt to resize modals using css */
+.modal-lg {
+width: 500 px;
+}
 
+.modal-header{
+    font-family: "Permanent Marker", cursive;
+    Font-size: 20px;
+}
 .minute {
     color: #000000;
-}
-
-.addMinute {
-    color: #9c7b66;
-}
-
-.fifteenMinute{
-    color: #d16706;
 }
 
 .page-header{
@@ -87,12 +86,4 @@ hr.large {
 div.calculator{
     text-align: center;
 }
-/* absolute position within relative container in absolute position 30 px and 14 px */
-#legend-button {
-    bottom: 30px;
-    right: 14px;
-    position: absolute;
-    border-radius: 4px;
-    border: 1px solid rgba(0,0,0,0.1);
-    z-index: 1100;
-  }
+

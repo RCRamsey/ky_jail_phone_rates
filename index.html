@@ -84,6 +84,34 @@
 
             <img src="graphics/jail_door_mcgrady.jpg" width="500px" alt="Jail door by Mcgrady">
 
+            <!-- Time Calculator -->
+            <div class="time calculator">
+                <div style="min-height: 172px;">
+                    <div class="tickcol right border">
+                        <i>You've Been Reading for</i>
+                        <div class="bigtick">
+
+                            <div id="timer" style="font-size: 100 px; color: orange; font-weight:bold"></div>
+                        </div>
+
+                        <div class="tickcolcenter">
+                            <div style="max-width:350px;display:inline-block">
+                                <i> A call from Henderson County Detention Center for this amount of time would
+                                    cost: </i>
+                            </div>
+                        </div>
+
+                        <div id="cost" style="font-size: 100 px; color: orange; font-weight:bold"></div>
+
+
+                        <div class="provider">
+                            via
+                            <label id="providers" style="display: inline;"> Securus </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </header>
 
@@ -122,14 +150,19 @@
                 <!-- 🔥Need to set the wmmt range map, wmmt video and embedded timer to the same width: -->
                 <!-- WMMT video under inspection is 339 wide and I attempted to match the wmmt_range map with 339 pixels and it doesnt't match -->
                 <!-- 🔥Need WMMT map in modal to not require scrolling. (all modals having this issue) Large modal defined as 800px but when I save my png as 800 px width it still requires scrolling-->
-                
 
-                <!--Modal: WMMT map-->
-                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+
+                <!--Modal 1: WMMT map-->
+                <!-- fade permits fade effect, tabindex=-1 sets the modal open focus on the div element itself, dialog means it opens as dialog box, aria is accessbile rich internet applications and correlates frequently to e screen readers-->
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="WMMT map"
                     aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: WMMT map Content-->
                         <div class="modal-content">
+                            <!-- Modal: WMMT map Header -->
+                            <div class="modal-header">
+                                WMMT Radio Station's Range and Incarceration Facilities its signal Reaches
+                            </div>
                             <!--Modal: WMMT map Body-->
                             <div class="modal-body mb-0 p-0">
                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
@@ -140,8 +173,6 @@
 
                             <!--Modal: WMMT map Footer-->
                             <div class="modal-footer justify-content-center">
-                                <span class="mr-4">WMMT Radio Stations Range and Incarceration Facilities it can
-                                    reach</span>
                                 <p>There are no mistakes. You can fix anything that happens. There is no right or
                                     wrong- as long as
                                     it makes you happy and doesn't hurt anyone.</p>
@@ -168,34 +199,6 @@
                 </div>
                 <!-- WMMT video card -->
 
-                <!-- Time Calculator -->
-                <div class="time calculator">
-                    <div style="min-height: 172px;">
-                        <div class="tickcol right border">
-                            <i>You've Been Reading for</i>
-                            <div class="bigtick">
-
-                                <div id="timer" style="font-size: 100 px; color: orange; font-weight:bold"></div>
-                            </div>
-
-                            <div class="tickcolcenter">
-                                <div style="max-width:350px;display:inline-block">
-                                    <i> A call from Henderson County Detention Center for this amount of time would
-                                        cost: </i>
-                                </div>
-                            </div>
-
-                            <div id="cost" style="font-size: 100 px; color: orange; font-weight:bold"></div>
-
-
-                            <div class="provider">
-                                via
-                                <label id="providers" style="display: inline;"> Securus </label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
 
@@ -203,8 +206,8 @@
             <!--🔥 best way to add gutter for y axis? -->
             <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
 
-                <!--Modal: conviction status of those incarcerated line graph popped out-->
-                <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                <!--Modal 2: conviction status of those incarcerated line graph popped out-->
+                <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="Conviction status of those incarcerate in KY Jail Graph"
                     aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: conviction status line graph content-->
@@ -235,8 +238,8 @@
                         alt="Conviction status line graph" data-toggle="modal" data-target="#modal2"></a>
 
 
-                <!--Modal: phone rates 2008-2018 line graph popped out-->
-                <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                <!--Modal 3: phone rates 2008-2018 line graph popped out-->
+                <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="Jail vs Prison Phone rates 2008-2018 Line graph"
                     aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: phone rates 2008-2018 graph content-->
@@ -267,8 +270,8 @@
                         alt="phone rates 2008-2018 line graph" data-toggle="modal" data-target="#modal3"></a>
 
 
-                <!--Modal: KY's incarcerated populations by facility type pie graph popped out-->
-                <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                <!--Modal 4: KY's incarcerated populations by facility type pie graph popped out-->
+                <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="Kentucky's Incarcerated Populations by Facility Pie Graph"
                     aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: KY's incarcerated populations by facility type pie graphcontent-->
@@ -320,52 +323,117 @@
         <div class="container">
             <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
 
-                 <!--Modal: urban vs rural jails with median income map popped out-->
-                 <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                     aria-hidden="true">
-                     <div class="modal-dialog modal-lg" role="document">
-                         <!--Modal: urban vs rural jails with median income content-->
-                         <div class="modal-content">
-                             <!--Modal: urban vs rural jails with median income map-->
-                             <div class="modal-body mb-0 p-0">
-                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
-                                     <iframe class="embed-responsive-item" src="graphics/ky_urban_rural_jails.png"
-                                         allowfullscreen></iframe>
-                                 </div>
+                <!--Modal 5: urban vs rural jails map popped out-->
+                <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="Urban vs Rural county's and Jail locations Map"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <!--Modal: urban vs rural jails content-->
+                        <div class="modal-content">
+                             <!-- Modal: Urban vs Rural Header -->
+                             <div class="modal-header">
+                                 Urban vs Rural County Map with Jail Locations
                              </div>
+                            <!--Modal: urban vs rural jails map-->
+                            <div class="modal-body mb-0 p-0">
+                                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                                    <iframe class="embed-responsive-item" src="graphics/ky_urban_rural_jails.png"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
 
-                             <!--Modal: urban vs rural jails with median income Footer-->
-                             <div class="modal-footer justify-content-center">
-                                 <p>There are no mistakes. You can fix anything that happens. There is no right or
-                                     wrong- as long as
-                                     it makes you happy and doesn't hurt anyone.</p>
+                            <!--Modal: urban vs rural jails Footer-->
+                            <div class="modal-footer justify-content-center">
+                                <p>There are no mistakes. You can fix anything that happens. There is no right or
+                                    wrong- as long as
+                                    it makes you happy and doesn't hurt anyone.</p>
 
-                                 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                                     data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!--Modal: urban vs rural jail on page-->
+                <a><img class="img-fluid z-depth-1" src="graphics/ky_urban_rural_jails.png"
+                        alt="Urban vs Rural County map with Jail locals mapped for KY" data-toggle="modal"
+                        data-target="#modal5"></a>
+
+
+                <!--Modal 6: point map of jail/prison popped out-->
+                <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="Point map of Jail/Prison in Kentucky"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <!--Modal: point map of jail/prison content-->
+                        <div class="modal-content">
+                             <!-- Modal: Jail/Prison Header -->
+                             <div class="modal-header">
+                                 All Kentucky Adult Incarceration Facilities
                              </div>
-                         </div>
-                         <!--/.Content-->
-                     </div>
-                 </div>
-                 <!--Modal: urban vs rural jails with median income on page-->
-                 <a><img class="img-fluid z-depth-1" src="graphics/ky_urban_rural_jails.png"
-                         alt="phone rates 2008-2018 line graph" data-toggle="modal" data-target="#modal5"></a>
-                 </div>
-                 </div>
-                
+                            <!--Modal: point map of jail/prison map-->
+                            <div class="modal-body mb-0 p-0">
+                                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                                    <iframe class="embed-responsive-item" src="graphics/ky_jail_prison_locals.png"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
 
-                 
-                <!-- jail locals point map -->
-                <div class="col my-3 border bg-light">
-                    <img src="graphics/ky_jail_prison_locals.png" class="img-thumbnail"
-                        alt="KY Prison vs Jail Locations by County">
-                </div>
+                            <!--Modal: point map of jail/prison Footer-->
+                            <div class="modal-footer justify-content-center">
+                                <p>There are no mistakes. You can fix anything that happens. There is no right or
+                                    wrong- as long as
+                                    it makes you happy and doesn't hurt anyone.</p>
 
-                <!-- choropleth % pop incarcerated -->
-                <div class="col my-3 border bg-light">
-                    <img src="graphics/incarc_pop_county.png" class="img-thumbnail"
-                        alt="% of KY County Population Incarcerated in Jail Choropleth">
+                                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
                 </div>
+                <!--Modal: point map of jail/prison on page-->
+                <a><img class="img-fluid z-depth-1" src="graphics/ky_jail_prison_locals.png"
+                        alt="Ky Incarcerations Facility Point Local Map" data-toggle="modal" data-target="#modal6"></a>
+
+
+
+
+                <!--Modal 7: percent of county incarcerated map popped out-->
+                <div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-labelledby="Percent of County Incarcerated Choropleth Map"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <!--Modal: percent of county incarceratedcontent-->
+                        <div class="modal-content">
+                             <!-- Modal: % of county incarcerated map Header -->
+                             <div class="modal-header">
+                                 Percent of County Incarcerated
+                             </div>
+                            <!--Modal: percent of county incarcerated map-->
+                            <div class="modal-body mb-0 p-0">
+                                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                                    <iframe class="embed-responsive-item" src="graphics/incarc_pop_county.png"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <!--Modal: percent of county incarcerated Footer-->
+                            <div class="modal-footer justify-content-center">
+                                <p>There are no mistakes. You can fix anything that happens. There is no right or
+                                    wrong- as long as
+                                    it makes you happy and doesn't hurt anyone.</p>
+
+                                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!--Modal: percent of county incarcerated on page-->
+                <a><img class="img-fluid z-depth-1" src="graphics/incarc_pop_county.png"
+                        alt="% of KY County Population Incarcerated in Jail Choropleth" data-toggle="modal"
+                        data-target="#modal7"></a>
+
             </div>
         </div>
 
@@ -387,7 +455,6 @@
         </div>
         </footer>
     </div>
-
 
 
     <!-- jQuery first and the minified version from jQuery site, not the slim minified version from Bootstrap's site.-->
