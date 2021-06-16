@@ -4,7 +4,7 @@ var map = L.map('map', {
     // zoom: 7,
     minZoom: 7,
     maxZoom: 10,
-   // maxBounds: L.latLngBounds([36.16, -89.45], [39.06, -81.62])
+    // maxBounds: L.latLngBounds([36.16, -89.45], [39.06, -81.62])
 });
 
 var accessToken = 'pk.eyJ1IjoicmNyYW1zZXkiLCJhIjoiY2tpN3UxOTJwMnh2ejJycXFja3NxemRocyJ9.cbhIjbrLpEGG0HkQS3fGLA'
@@ -31,7 +31,7 @@ const lz = {
     }
 };
 
-const layer1 = $.getJSON('data/ky-counties.geojson', function(data) {
+const layer1 = $.getJSON('data/ky-counties.geojson', function (data) {
 
     const kyCounties = L.geoJson(data, {
 
@@ -45,37 +45,35 @@ const layer1 = $.getJSON('data/ky-counties.geojson', function(data) {
 
 
 $.when(layer1)
-    .then( function () {
+    .then(function () {
         omnivore.csv('data/rates_ky_jail_by_cnty.csv')
-    .on('ready', function (e) {
+            .on('ready', function (e) {
 
-        //access to GeoJSON here
-        //.toGeoJSON method, added to e.target object, to load csv as GeoJSON
-        //bonus loading as csv instead of GeoJSON initially reduces file size
+                //access to GeoJSON here
+                //.toGeoJSON method, added to e.target object, to load csv as GeoJSON
+                //bonus loading as csv instead of GeoJSON initially reduces file size
 
-        console.log(e.target.toGeoJSON())
+                console.log(e.target.toGeoJSON())
 
-        drawMap(e.target.toGeoJSON());
-       // drawLegend(e.target.toGeoJSON());
+                drawMap(e.target.toGeoJSON());
+                reColorCircles(e.target.toGeoJSON());
+                // drawLegend(e.target.toGeoJSON());
+            })
+
+            .on('error', function (e) {
+                console.log(e.error[0].message)
+            });
     })
-
-    .on('error', function (e) {
-        console.log(e.error[0].message)
-    });
-    })
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 //send argument 'e.target.toGeoJSON()' and drawMap accept as parameter 'data'
 function drawMap(data) {
     //access to data here
 
-    data.features.forEach(function(feature) {
+    data.features.forEach(function (feature) {
         const props = feature.properties
-        if (props['first minute'] != null) {
-            lz['first minute'].values.push(+props['first minute']) //push values into empty values array above
+        if (props['fifteen minute'] != null) {
+            lz['fifteen minute'].values.push(+props['fifteen minute']) //push values into empty values array above
         }
     })
 
@@ -84,14 +82,15 @@ function drawMap(data) {
     //sum of array and values of array returned
     //.length calculates how many numbers in the original array
     //Returned sum from .reduce function is then divided by how many numbers are in the array. to caluclate average of array 
-    //🐔 what does the ,0 do on line 92?
-    
-  lz['first minute'].average = 
-    lz['first minute'].values.reduce(function (sum, value) {
-            return sum + value; //is this just returning the sum AND the original values for later use?
-        }, 0) / lz['first minute'].values.length; 
+    //🐔 what does the ,0 do on line 90?
 
-console.log(lz['first minute'].average)
+    //fifteen minute data used as it incorporates both the initial 1st min phone call and additional minute cost. 
+    lz['fifteen minute'].average =
+        lz['fifteen minute'].values.reduce(function (sum, value) {
+            return sum + value; //is this just returning the sum AND the original values for later use?
+        }, 0) / lz['fifteen minute'].values.length;
+
+    console.log(lz['fifteen minute'].average)
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -103,70 +102,79 @@ console.log(lz['first minute'].average)
         opacity: 1
     };
 
+
+
     // create circle leaflet layer from data received as a parameter in drawMap function
 
-        const cost = L.geoJson(data, {
+    const cost = L.geoJson(data, {
 
-            pointToLayer: function (feature, latlng) {
-                // console.log(latlng)
-                return L.circleMarker(latlng, commonStyles);
-            },
-            // and match the style given in first object and with getRadius()
-            style: function (feature) {
-                //console.log(feature)
+        pointToLayer: function (feature, latlng) {
+            // console.log(latlng)
+            return L.circleMarker(latlng, commonStyles);
+        },
+        // and match the style given in first object and with getRadius()
+        style: function (feature) {
+            //console.log(feature)
 
-                return {
-                    color: lz['first minute'].color,
-                    fillColor: lz['first minute'].color,
-                    radius: getRadius(feature.properties['first minute'])
-                }
-
-            },
-            //add user interaction for clicking 
-            onEachFeature: function (feature, layer) {
-                layer.on('mouseover', function (e) {
-                    e.target.setStyle({
-                        fillColor: 'white'
-                    });
-                    layer.on('mouseout', function(e){
-
-                        // layer.setStyle(lz.color)/
-
-                        e.target.setStyle({
-                            fillColor: lz['first minute'].color
-                        });
-                    })
-                });
-                //create popup with Name of layer & cost by referencing geoJSON
-                var props=feature.properties
-                
-                for (i in lz) {
-                    if (lz[i].average) {
-                        lz[i].compare = (props[i] / lz[i].average) * 100 //calculates how the property compares to the average amount of the sum of the property
-                    }
-                }
-
-               // console.log(props.Facility);
-               //cost will vary based on layer used
-                var popup = `Name: ${props.Facility}<br>
-                            Provider: ${props.Provider}<br>
-                            Rate first minute:  ${props['first minute']}, ${lz['first minute'].compare}% of average`
-                        //     // 1st Minute: $ ${}<br>
-                        //    Additional Minute: $ ${props.additionalMinute}<br>
-                        // //    Fifteen Minute: $ ${props.fifteen_minute}` 
-                           layer.bindTooltip(popup)
+            return {
+                color: lz['fifteen minute'].color,
+                fillColor: lz['fifteen minute'].color,
+                radius: getRadius(feature.properties['fifteen minute'])
             }
-        }).addTo(map);
-        //🐔 map bounds too zoomed in. Options?
-        // map.fitBounds(cost.getBounds());
-    } // end drawMap()
+
+        },
+        //add user interaction for clicking 
+        onEachFeature: function (feature, layer) {
+
+            layer.on('mouseover', function (e) {
+                e.target.setStyle({
+                    fillColor: 'white'
+                });
+                layer.on('mouseout', function (e) {
+
+                    // layer.setStyle(lz.color)/
+
+                    e.target.setStyle({
+                        fillColor: lz['fifteen minute'].color
+
+                    });
+                })
+            });
+
+            //calculate how the property compares to average amount of sum of property values and round
+            var props = feature.properties
+
+            for (i in lz) {
+                if (lz[i].average) {
+                    lz[i].compare = Math.round((props[i] / lz[i].average) * 100)
+                }
+            }
+
+            // console.log(props.Facility);
+
+            //create popup with Name of layer & cost by referencing geoJSON
+            var popup = `<b>Name:</b> ${props.Facility}<br>
+                            <b>Provider:</b> ${props.Provider}<br>
+                            <b>15 minute call cost:</b> $${props['fifteen minute']}, ${lz['fifteen minute'].compare}% of average facility call cost`
+
+            layer.bindTooltip(popup)
+
+        
+        }
+        
+    }).addTo(map);
+    //🐔 map bounds too zoomed in. Options?
+    // map.fitBounds(cost.getBounds());
+
+    reColorCircles(lz[i].compare, cost)
+} // end drawMap()
 
 
-    // altered csv to remove $ and used: 
-    function getRadius(area) {
-        var radius = Math.sqrt(area/Math.PI);
-        return radius * 20;
-    }
+// altered csv to remove $ and used: 
+function getRadius(area) {
+    var radius = Math.sqrt(area / Math.PI);
+    return radius * 15;
+}
 
 // // drawLegend function
 // function drawLegend(data){
@@ -179,7 +187,7 @@ console.log(lz['first minute'].average)
 //     //when control added to map
 //     legendControl.onAdd= function (map) {
 //         const legend = L.DomUtil.get('legend');
-        
+
 //         //disable scrol/click functionaliaty
 //         L.DomEvent.disableScrollPropagation(legend);
 //         L.DomEvent.disableClickPropagation(legend);
@@ -190,3 +198,20 @@ console.log(lz['first minute'].average)
 
 //     legendControl.addTo(map);
 
+
+
+  // //🐔 if-else statement- I've attempted to call this function at the end of draw map in order to create diverging circle colors based on comparison of the facility to average of all facilities. I struggled with being able to assign color within the drawMap because of the order at which all the math calculations occur after the assignment of color and thought this would be the best route. With the exception of it failing to work. Current error is e not being defined.
+function reColorCircles(comparisons, data) { 
+    if (lz['fifteen minute'].compare > 100) {
+        // if true and is greater than the average 
+        e.target.setStyle({
+            fillColor: orange
+        });
+        }
+        else {
+            // if false use tooltip
+            e.target.setStyle({
+                fillColor: black
+            });
+        }
+    }
