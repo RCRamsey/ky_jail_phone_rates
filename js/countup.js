@@ -19,6 +19,9 @@ function countTimer() {
     } else {
         callCost = 3.32 //if less than 1 cost only 3.32
     }
-    document.getElementById("cost").innerHTML = callCost; //put result in div element called cost
+
+    var callCostRnd = callCost.toFixed(2);
+
+    document.getElementById("cost").innerHTML = "$"+callCostRnd; //put result in div element called cost
 }
 
