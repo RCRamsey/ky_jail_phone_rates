@@ -56,10 +56,12 @@ color scheme
     background: url('../graphics/jail_door_mcgrady.jpg') no-repeat top;
 }
 
-header h1 {
+h1 {
     color: #d16706;
     font-family: "Permanent Marker", cursive;
     Font-size: 55px;
+    text-align:center;
+
 }
 
 h2{
@@ -76,6 +78,7 @@ h2{
 font-size: 20px;
 color: orange;
 font-weight: bold;
+text-align: center;
 }
 
 #cost {
@@ -86,7 +89,7 @@ font-weight: bold;
 
 body{
     font-family: "Overpass", Sans-Serif;
-    font-size: 10px
+    font-size: 18px
 }
 
 
