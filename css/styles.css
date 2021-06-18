@@ -2,29 +2,54 @@
 /* custom CSS style rules written here*/
 /* otherwise most CSS style rules being pulled from assembly.min.css */
 
-/* kenyan flag color scheme 
-adobe color confirmed color blind safe
+/* 
+color scheme
 #000000
 #d16706
 #9c7b66
 #ffffff
 */
+    body {
+        /* background: #20282e; */
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
 
+    h2 {
+        font-weight: 800;
+        text-align: center;
+    }
 
+    p {
+        line-height: 1.7rem;
+    }
 
-#map {
-    background: #448ee4;
-}
+    #map {
+        height: 75vh;
+        /* 80% of viewport height of element */
+        background: #e3ccc1;
+    }
 
-#info {
+    #wmmtMap {
+        background: blue;
+    }
+
+    /* xtra small devices (phones, 576px and below) */
+    /* small devices (phones, 576px and up) */
+    @media (min-width: 576) {}
+
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {}
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {}
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {}
+
+/* #info {
     z-index: 1000;
-}
-
-/* 
-header {
-    padding: 154px 0 100px;
-    background: linear-gradient (45 deg, rgba(39, 43, 48, 0.8) 0%, rgba(39,43,48, 0.9) 100%), url ('../graphics/jail_door_mcgrady.jpg'); */
-}
+} */
 
 .banner1
 {
@@ -39,6 +64,24 @@ header h1 {
 
 h2{
     color:  #9c7b66;
+}
+
+.tickcolcenter
+{
+    max-width: 800px;
+    display: inline-block;  
+}
+
+#timer{
+font-size: 20px;
+color: orange;
+font-weight: bold;
+}
+
+#cost {
+    font-size: 20px;
+    color: orange;
+    font-weight:bold;
 }
 
 body{
@@ -59,7 +102,7 @@ hr.large {
     /* overwrite assembly.css rule */
 }
 
-/* attempt to resize modals using css */
+/* resize modals using css */
 .modal-lg {
 width: 500 px;
 }
@@ -70,13 +113,6 @@ width: 500 px;
 }
 .minute {
     color: #000000;
-}
-
-.page-header{
-    height: 60 px;
-    margin-top: 0px;
-    background-size: cover;
-    background-image: url(./graphics/jail_door_mcgrady.jpg);
 }
 
 .tickcol{
