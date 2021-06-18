@@ -58,6 +58,10 @@
         background: blue;
     }
 
+    /* xtra small devices (phones, 576px and below) */
+    /* small devices (phones, 576px and up) */
+    @media (min-width: 576) {}
+
     /* Medium devices (tablets, 768px and up)*/
     @media (min-width: 768px) {}
 
@@ -73,16 +77,22 @@
 
     <!-- Title Container -->
     <!-- 🔥 text to appear on top of image. image to stretch the entire background with gradient fade defined in css. -->
-    <header class="bg-secondary text-white">
-        <div class="container text-center">
-
-            <h1>Rates & Fees STILL Apply?!</h1>
+    
+    <div class="container-fluid"
+    <div class="banner1">
+    <!-- <header class="bg-secondary text-white">
+        <div class="container text-center "> -->
+            
+            <!-- <h1>Rates & Fees STILL Apply?!</h1>
 
             <blockquote class="blockquote">
                 <p class="mb-0">2018 Kentucky County Phone Rates for 32 Jails</p>
-            </blockquote>
+            </blockquote> -->
 
-            <img src="graphics/jail_door_mcgrady.jpg" width="500px" alt="Jail door by Mcgrady">
+            <h1>Rates & Fees Apply</h1>
+            <h2>2018 Kentucky County Phone Rates from Jail</h2>
+
+            <!-- <img src="graphics/jail_door_mcgrady.jpg" width="500px" alt="Jail door by Mcgrady"> -->
 
             <!-- Time Calculator -->
             <div class="time calculator">
@@ -113,13 +123,17 @@
 
             </div>
         </div>
-    </header>
+    </div>
+    <!-- </header> -->
+    </div>
+
 
 
     <!--Proportional fees/rates Map Container-->
+    <!--🔥  why does this map change sizes at the sm breakpoint? should be full width entire time... -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 px-0">
+            <div class="col">
                 <div id="map"></div>
             </div>
         </div>
@@ -131,8 +145,8 @@
         <div class="row">
 
             <!-- Grid column -->
-            <div class="col-md-6 py-2">
-                <div class="offset-md-2">
+            <div class="col-6">
+                <div class="offset-1">
 
                     <!-- Body text for page -->
                     <p>There are no mistakes. You can fix anything that happens. There is no right or wrong - as long as
@@ -145,13 +159,13 @@
             </div>
 
             <!-- Grid column and 3 elements (WMMT map, Video, Timer) stacked one above the other in the column.-->
-            <div class="col-md-6 py-2 w-100">
+            <div class="col-6 py-2 w-100">
 
                 <!-- 🔥Need to set the wmmt range map, wmmt video and embedded timer to the same width: -->
                 <!-- WMMT video under inspection is 339 wide and I attempted to match the wmmt_range map with 339 pixels and it doesnt't match -->
                 <!-- 🔥Need WMMT map in modal to not require scrolling. (all modals having this issue) Large modal defined as 800px but when I save my png as 800 px width it still requires scrolling-->
 
-
+                <div class="col-10"
                 <!--Modal 1: WMMT map-->
                 <!-- fade permits fade effect, tabindex=-1 sets the modal open focus on the div element itself, dialog means it opens as dialog box, aria is accessbile rich internet applications and correlates frequently to e screen readers-->
                 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="WMMT map"
@@ -185,12 +199,12 @@
                     </div>
                 </div>
                 <!--Modal: WMMT range map-->
-                <a><img class="img-fluid z-depth-1" src="graphics/wmmt_range.png" alt="temporary_place_holder_image"
+                <a><img class="img-fluid z-depth-1" src="graphics/wmmt_range.png" alt="WMMT radio station broadcasting range"
                         data-toggle="modal" data-target="#modal1"></a>
-
+                </div>
 
                 <!--WMMT video card  -->
-                <div class="col-lg-10 col-sm-10">
+                <div class="col-10">
                     <div class="card">
                         <a target="_blank" href="https://www.youtube.com/watch?v=RUUAOyA_SCo"><img class="card-img-top"
                                 src="graphics/calls_from_home.png" alt="Calls from Home Video"></a>
@@ -203,12 +217,13 @@
         </div>
 
         <div class="container">
-            <!--🔥 best way to add gutter for y axis? -->
-            <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
+            <!--🔥 best way to add gutter for y axis? the change in g for row doesn't seem to make a difference.-->
+            <div class="row g-0">
 
+                <div class="col-md-4"
                 <!--Modal 2: conviction status of those incarcerated line graph popped out-->
-                <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="Conviction status of those incarcerate in KY Jail Graph"
-                    aria-hidden="true">
+                <div class="modal fade" id="modal2" tabindex="-1" role="dialog"
+                    aria-labelledby="Conviction status of those incarcerate in KY Jail Graph" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: conviction status line graph content-->
                         <div class="modal-content">
@@ -236,11 +251,12 @@
                 <!--Modal: conviction status line graph on page-->
                 <a><img class="img-fluid z-depth-1" src="graphics/convicted_status_1978-2013.png"
                         alt="Conviction status line graph" data-toggle="modal" data-target="#modal2"></a>
+                </div>
 
-
+                <div class="col-md-4"
                 <!--Modal 3: phone rates 2008-2018 line graph popped out-->
-                <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="Jail vs Prison Phone rates 2008-2018 Line graph"
-                    aria-hidden="true">
+                <div class="modal fade" id="modal3" tabindex="-1" role="dialog"
+                    aria-labelledby="Jail vs Prison Phone rates 2008-2018 Line graph" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: phone rates 2008-2018 graph content-->
                         <div class="modal-content">
@@ -268,11 +284,12 @@
                 <!--Modal: conviction status line graph on page-->
                 <a><img class="img-fluid z-depth-1" src="graphics/phone_rates_2008_2018.png"
                         alt="phone rates 2008-2018 line graph" data-toggle="modal" data-target="#modal3"></a>
+                </div>
 
-
+                <div class="col-md-4"
                 <!--Modal 4: KY's incarcerated populations by facility type pie graph popped out-->
-                <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="Kentucky's Incarcerated Populations by Facility Pie Graph"
-                    aria-hidden="true">
+                <div class="modal fade" id="modal4" tabindex="-1" role="dialog"
+                    aria-labelledby="Kentucky's Incarcerated Populations by Facility Pie Graph" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: KY's incarcerated populations by facility type pie graphcontent-->
                         <div class="modal-content">
@@ -300,20 +317,23 @@
                 <!--Modal: KY's incarcerated populations by facility type pie graph on page-->
                 <a><img class="img-fluid z-depth-1" src="graphics/incarc_2018_pie.png"
                         alt="phone rates 2008-2018 line graph" data-toggle="modal" data-target="#modal4"></a>
+                </div>
             </div>
         </div>
 
 
         <!-- 2nd body of text -->
         <div class="container">
-            <div class="offset-md-2">
+            <div class="offset-1">
                 <div class="row">
                     <!-- 2nd Body text for page -->
                     <p>There are no mistakes. You can fix anything that happens. There is no right or wrong- as long as
                         it makes you happy and doesn't hurt anyone.</p>
                     <p>That's crazy. A fan brush is a fantastic piece of equipment. Use it. Make friends with it.</p>
+                    <p>
                     <li>list 1</li>
                     <li>list 2</li>
+                    </p>
 
                 </div>
             </div>
@@ -321,18 +341,19 @@
 
 
         <div class="container">
-            <div class="row row-cols-3 row-cols-lg-3 g-3 g-lg-4">
+            <div class="row row-cols-md-3 g-0">
 
+                <div class="col-md-4"
                 <!--Modal 5: urban vs rural jails map popped out-->
-                <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="Urban vs Rural county's and Jail locations Map"
-                    aria-hidden="true">
+                <div class="modal fade" id="modal5" tabindex="-1" role="dialog"
+                    aria-labelledby="Urban vs Rural county's and Jail locations Map" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: urban vs rural jails content-->
                         <div class="modal-content">
-                             <!-- Modal: Urban vs Rural Header -->
-                             <div class="modal-header">
-                                 Urban vs Rural County Map with Jail Locations
-                             </div>
+                            <!-- Modal: Urban vs Rural Header -->
+                            <div class="modal-header">
+                                Urban vs Rural County Map with Jail Locations
+                            </div>
                             <!--Modal: urban vs rural jails map-->
                             <div class="modal-body mb-0 p-0">
                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
@@ -358,18 +379,19 @@
                 <a><img class="img-fluid z-depth-1" src="graphics/ky_urban_rural_jails.png"
                         alt="Urban vs Rural County map with Jail locals mapped for KY" data-toggle="modal"
                         data-target="#modal5"></a>
+            </div>
 
-
+            <div class="col-md-4"
                 <!--Modal 6: point map of jail/prison popped out-->
-                <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="Point map of Jail/Prison in Kentucky"
-                    aria-hidden="true">
+                <div class="modal fade" id="modal6" tabindex="-1" role="dialog"
+                    aria-labelledby="Point map of Jail/Prison in Kentucky" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: point map of jail/prison content-->
                         <div class="modal-content">
-                             <!-- Modal: Jail/Prison Header -->
-                             <div class="modal-header">
-                                 All Kentucky Adult Incarceration Facilities
-                             </div>
+                            <!-- Modal: Jail/Prison Header -->
+                            <div class="modal-header">
+                                All Kentucky Adult Incarceration Facilities
+                            </div>
                             <!--Modal: point map of jail/prison map-->
                             <div class="modal-body mb-0 p-0">
                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
@@ -394,20 +416,19 @@
                 <!--Modal: point map of jail/prison on page-->
                 <a><img class="img-fluid z-depth-1" src="graphics/ky_jail_prison_locals.png"
                         alt="Ky Incarcerations Facility Point Local Map" data-toggle="modal" data-target="#modal6"></a>
+            </div>
 
-
-
-
+                <div class="col-md-4"
                 <!--Modal 7: percent of county incarcerated map popped out-->
-                <div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-labelledby="Percent of County Incarcerated Choropleth Map"
-                    aria-hidden="true">
+                <div class="modal fade" id="modal7" tabindex="-1" role="dialog"
+                    aria-labelledby="Percent of County Incarcerated Choropleth Map" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <!--Modal: percent of county incarceratedcontent-->
                         <div class="modal-content">
-                             <!-- Modal: % of county incarcerated map Header -->
-                             <div class="modal-header">
-                                 Percent of County Incarcerated
-                             </div>
+                            <!-- Modal: % of county incarcerated map Header -->
+                            <div class="modal-header">
+                                Percent of County Incarcerated
+                            </div>
                             <!--Modal: percent of county incarcerated map-->
                             <div class="modal-body mb-0 p-0">
                                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
@@ -433,7 +454,7 @@
                 <a><img class="img-fluid z-depth-1" src="graphics/incarc_pop_county.png"
                         alt="% of KY County Population Incarcerated in Jail Choropleth" data-toggle="modal"
                         data-target="#modal7"></a>
-
+                </div>
             </div>
         </div>
 
@@ -460,14 +481,25 @@
     <!-- jQuery first and the minified version from jQuery site, not the slim minified version from Bootstrap's site.-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- then Popper JS -->
+    <!-- then Popper JS
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
     <!-- then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script> -->
+
+    <!-- popper & bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
+
+
+
     <!-- then Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="

@@ -20,10 +20,15 @@ adobe color confirmed color blind safe
     z-index: 1000;
 }
 
-
+/* 
 header {
     padding: 154px 0 100px;
-    background: linear-gradient (45 deg, rgba(39, 43, 48, 0.8) 0%, rgba(39,43,48, 0.9) 100%), url ('../graphics/jail_door_mcgrady.jpg');
+    background: linear-gradient (45 deg, rgba(39, 43, 48, 0.8) 0%, rgba(39,43,48, 0.9) 100%), url ('../graphics/jail_door_mcgrady.jpg'); */
+}
+
+.banner1
+{
+    background: url('../graphics/jail_door_mcgrady.jpg') no-repeat top;
 }
 
 header h1 {
@@ -76,7 +81,7 @@ width: 500 px;
 
 .tickcol{
     float: left;
-    width: 30%;
+    width: 100%;
     font-size: 17.5px;
     position: relative;
     transform: translateY(8%);
