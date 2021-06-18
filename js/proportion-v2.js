@@ -170,8 +170,7 @@ function drawMap(data) {
         }
 
     }).addTo(map);
-    //🐔 map bounds too zoomed in. Options?
-    // map.fitBounds(cost.getBounds());
+  
 
     reColorCircles(lz[i].compare, cost)
 } // end drawMap()
