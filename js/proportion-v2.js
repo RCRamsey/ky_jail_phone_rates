@@ -63,7 +63,7 @@ $.when(layer1)
                 console.log(e.target.toGeoJSON())
 
                 drawMap(e.target.toGeoJSON());
-                reColorCircles(e.target.toGeoJSON());
+                // reColorCircles(e.target.toGeoJSON());
                 // drawLegend(e.target.toGeoJSON());
             })
 
@@ -172,7 +172,7 @@ function drawMap(data) {
     }).addTo(map);
   
 
-    reColorCircles(lz[i].compare, cost)
+    // reColorCircles(lz[i].compare, cost)
 } // end drawMap()
 
 
