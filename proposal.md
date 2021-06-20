@@ -55,10 +55,13 @@ Ky map with points to demonstrate the numerous facilities across KY and their ca
 Data can be found *assignment/data/ky_jail_prison_by_county.csv* 
        
 **Anticipated Visual 6**  
-Point map of prison/jail locations in KY with WMMT location marked and a circle radius demonstrating all incarceration facilities it reaches with its show and a video about *Calls from Home*.  
+Point map of prison/jail locations in KY with WMMT location marked and a circle radius demonstrating all incarceration facilities it reaches with its show and a documentary video about *Calls from Home*.  Video produced by Field Studio May-July 2012. Has Creative Commons Attribution License reuse allowed.
 *Sources*  
 - https://www.wmmt.org/callsfromhome/  
 - https://vimeo.com/44433312
+- https://www.youtube.com/watch?v=RUUAOyA_SCo
+- https://www.fieldstudiofilms.com
+
 
 *Description*  
 A demonstration of the current state of affairs for some families. Credit will be given to WMMT and the individual/organization who filmed/posted the interview of the *Calls from Home* show.
