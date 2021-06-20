@@ -97,6 +97,9 @@ function drawMap(data) {
             return sum + value; //is this just returning the sum AND the original values for later use?
         }, 0) / lz['fifteen minute'].values.length;
 
+        // in the array .reduce method, the second argument is in the initial value 
+        // and the running total in this example.
+
     console.log(lz['fifteen minute'].average)
 
 
