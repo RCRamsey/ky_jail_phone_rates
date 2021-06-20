@@ -53,7 +53,8 @@ color scheme
 
 .banner1
 {
-    background: url('../graphics/jail_door_mcgrady.jpg') no-repeat top;
+    background: url('../graphics/jail_door_mcgrady.jpg') 100%;
+    /* https://www.w3schools.com/cssref/css3_pr_background.asp */
 }
 
 h1 {
