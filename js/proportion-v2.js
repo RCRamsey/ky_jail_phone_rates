@@ -204,7 +204,7 @@ function getRadius(area) {
 
 //     legendControl.addTo(map);
 
-//🐔 data.eachLayer not a function error
+//🐔  data.eachLayer not a function error
 function reColorCircles(data) {
 
     data.eachLayer(function(layer){
@@ -217,7 +217,7 @@ function reColorCircles(data) {
     })
 }
 
-function recolor (x, avg) {
+function recolorCircles (x, avg) {
     if (x>= 1.5 * avg) {
         return 'red'
     } else if (x>= avg ) {
