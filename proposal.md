@@ -55,10 +55,13 @@ Ky map with points to demonstrate the numerous facilities across KY and their ca
 Data can be found *assignment/data/ky_jail_prison_by_county.csv* 
        
 **Anticipated Visual 6**  
-Point map of prison/jail locations in KY with WMMT location marked and a circle radius demonstrating all incarceration facilities it reaches with its show and a video about *Calls from Home*.  
+Point map of prison/jail locations in KY with WMMT location marked and a circle radius demonstrating all incarceration facilities it reaches with its show and a documentary video about *Calls from Home*.  Video produced by Field Studio May-July 2012. Has Creative Commons Attribution License reuse allowed.
 *Sources*  
 - https://www.wmmt.org/callsfromhome/  
 - https://vimeo.com/44433312
+- https://www.youtube.com/watch?v=RUUAOyA_SCo
+- https://www.fieldstudiofilms.com
+
 
 *Description*  
 A demonstration of the current state of affairs for some families. Credit will be given to WMMT and the individual/organization who filmed/posted the interview of the *Calls from Home* show.
@@ -86,7 +89,7 @@ https://www.cdc.gov/nchs/data_access/urban_rural.htm#Data_Files_and_Documentatio
 https://www.census.gov/search-results.html?searchType=web&cssp=SERP&q=median%20income%20kentucky%20county
 
 *Description*  
-The original data was for counties nationwide. Will be pulling KY counties from this data using the same 6 designations of 1 Large Central Metro (inner city) 2 Large Fringe Metro (suburban) 3 Medium Metro 4 Small Metro 5 Micropolitan 6 Non-core. This will demonstrate the potential isolation of the locations and the potential financial strain put on the county population if their family member is incarcerated locally.
+The original data was for counties nationwide. Will be pulling KY counties from this data using the same 6 designations of 1 Large Central Metro (inner city) 2 Large Fringe Metro (suburban) 3 Medium Metro 4 Small Metro 5 Micropolitan 6 Non-core. This will demonstrate the potential isolation of the locations (how far a drive for someone to visit and talk vs phone call) and the potential financial strain put on the county population if their family member is incarcerated locally.
 Data can be found *assignment/data/NCHSURCodes2013_raw.csv* & *assignment/data/2015_19_med_income_cnty.csv*
 
 ## Part II: Topic & Geographic Phenomena 
