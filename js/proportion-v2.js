@@ -63,7 +63,7 @@ $.when(layer1)
                 console.log(e.target.toGeoJSON())
 
                 drawMap(e.target.toGeoJSON());
-                reColorCircles(e.target.toGeoJSON());
+                // reColorCircles(e.target.toGeoJSON());
                 // drawLegend(e.target.toGeoJSON());
             })
 
@@ -171,7 +171,7 @@ function drawMap(data) {
 
     }).addTo(map);
   
-
+    
     reColorCircles(cost)
 } // end drawMap()
 
@@ -212,12 +212,12 @@ function reColorCircles(data) {
         console.log(p['fifteen minute'])
 
         layer.setStyle({
-            fillColor: reColorCircles(p['fifteen minute'], lz['fifteen minute'].average)
+            fillColor: colorCircles(p['fifteen minute'], lz['fifteen minute'].average)
         });
     })
 }
 
-function recolorCircles (x, avg) {
+function colorCircles (x, avg) {
     if (x>= 1.5 * avg) {
         return 'red'
     } else if (x>= avg ) {
