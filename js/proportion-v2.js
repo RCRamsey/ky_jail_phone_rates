@@ -63,7 +63,7 @@ $.when(layer1)
                 console.log(e.target.toGeoJSON())
 
                 drawMap(e.target.toGeoJSON());
-                // reColorCircles(e.target.toGeoJSON());
+                reColorCircles(e.target.toGeoJSON());
                 // drawLegend(e.target.toGeoJSON());
             })
 
@@ -172,7 +172,7 @@ function drawMap(data) {
     }).addTo(map);
   
 
-    // reColorCircles(lz[i].compare, cost)
+    reColorCircles(cost)
 } // end drawMap()
 
 
@@ -204,17 +204,27 @@ function getRadius(area) {
 
 //     legendControl.addTo(map);
 
-// //🐔 if-else statement- I've attempted to call this function at the end of draw map in order to create diverging circle colors based on comparison of the facility to average of all facilities. I struggled with being able to assign color within the drawMap because of the order at which all the math calculations occur after the assignment of color and thought this would be the best route. With the exception of it failing to work. Is there a better place to call this?
-// function reColorCircles(comparisons, data) {
-//     if (lz['fifteen minute'].compare > 100) {
-//         // if true and is greater than the average 
-//         e.target.setStyle({
-//             fillColor: orange
-//         });
-//     } else {
-//         // if false use tooltip
-//         e.target.setStyle({
-//             fillColor: black
-//         });
-//     }
-// }
+//🐔 data.eachLayer not a function error
+function reColorCircles(data) {
+
+    data.eachLayer(function(layer){
+        const p = layer.feature.properties
+        console.log(p['fifteen minute'])
+
+        layer.setStyle({
+            fillColor: reColorCircles(p['fifteen minute'], lz['fifteen minute'].average)
+        });
+    })
+}
+
+function recolor (x, avg) {
+    if (x>= 1.5 * avg) {
+        return 'red'
+    } else if (x>= avg ) {
+        return 'orange'
+    } else if (x>= 0.5* avg) {
+        return 'gray'
+    } else {
+        return 'blue'
+    }
+}    

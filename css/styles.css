@@ -13,6 +13,7 @@ color scheme
         /* background: #20282e; */
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
+        color: #e3ccc1;
     }
 
     h2 {
@@ -22,6 +23,14 @@ color scheme
 
     p {
         line-height: 1.7rem;
+    }
+
+    a:link{
+        color: #ee7b0f;
+    }
+
+    a:href{
+        color:#ee7b0f;
     }
 
     #map {
@@ -51,13 +60,13 @@ color scheme
     z-index: 1000;
 } */
 
-.banner1
+/* .banner1
 {
-    background: url('../graphics/jail_door_mcgrady.jpg') no-repeat top;
-}
+    background: url('../graphics/jail_door_mcgrady.jpg') 100%;
+} */
 
 h1 {
-    color: #d16706;
+    color: #ee7b0f;
     font-family: "Permanent Marker", cursive;
     Font-size: 55px;
     text-align:center;
@@ -65,31 +74,34 @@ h1 {
 }
 
 h2{
-    color:  #9c7b66;
+    color: #e3ccc1;
 }
 
 .tickcolcenter
 {
     max-width: 800px;
     display: inline-block;  
+    
 }
 
 #timer{
 font-size: 20px;
-color: orange;
+color: #ee7b0f;
 font-weight: bold;
 text-align: center;
 }
 
 #cost {
     font-size: 20px;
-    color: orange;
+    color: #ee7b0f;
     font-weight:bold;
 }
 
 body{
     font-family: "Overpass", Sans-Serif;
     font-size: 18px
+    color: #e3ccc1;
+    background: #9c7b66;
 }
 
 
@@ -103,6 +115,18 @@ hr.large {
     /* overwrite assembly.css rule */
     margin-top: 8px;
     /* overwrite assembly.css rule */
+}
+
+/* 🔥place modal image button to click and launch modal */
+.modal1 {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
 }
 
 /* resize modals using css */
@@ -130,4 +154,5 @@ width: 500 px;
 div.calculator{
     text-align: center;
 }
+
 
