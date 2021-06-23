@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
 
+    <meta charset="utf-8">
     <meta name="viewport" content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <title>KY County Jail Phone Rates</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"/>
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
+        crossorigin=""/>
+
     <!-- Google Web Font -->
-    <link href="https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker" rel="stylesheet"> />
+    <link href="https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker" rel="stylesheet"/>
 
     <!-- Custom Style -->
     <link href="css/styles.css" rel="stylesheet" />
@@ -27,6 +27,250 @@
 </style>
 
 <body>
+    <!-- Modal Section -->
+
+    <!--Modal 1: WMMT map-->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="WMMT map" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <!--Modal: WMMT map Content-->
+            <div class="modal-content">
+                <!-- Modal: WMMT map Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modal1Label">WMMT Radio Station's Range and Incarceration Facilities its
+                        signal Reaches</h2>
+                </div>
+                <!--Modal: WMMT map Body-->
+                <div class="modal-body">
+                    <img class="img-fluid" src="graphics/wmmt_range.png" alt="text">
+                </div>
+                <!-- <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                        <iframe class="embed-responsive-item" width="560" height="315" src="graphics/wmmt_range.png"
+                            allowfullscreen></iframe>
+                    </div> -->
+                <!-- </div> -->
+
+                <!--Modal: WMMT map Footer-->
+                <div class="modal-footer justify-content-center">
+                    <p>There are no mistakes. You can fix anything that happens. There is no right or
+                        wrong- as long as
+                        it makes you happy and doesn't hurt anyone.</p>
+
+                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+
+
+    <!-- Modal 2: conviction status of those incarcerated line graph popped out -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog"
+        aria-labelledby="Conviction status of those incarcerate in KY Jail Graph" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <!--Modal: conviction status line graph content-->
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    Conviction Status of KY's Incarcerated
+                </div>
+                <!--Modal: conviction status line graph-->
+                <div class="modal-body mb-0 p-0">
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                        <iframe class="embed-responsive-item" width="560" height="315"
+                            src="graphics/convicted_status_1978-2013.png" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!--Modal: conviction status map Footer-->
+                <div class="modal-footer justify-content-center">
+                    <p>There are no mistakes. You can fix anything that happens. There is no right or
+                        wrong- as long as
+                        it makes you happy and doesn't hurt anyone.</p>
+
+                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+
+    <!--Modal 3: phone rates 2008-2018 line graph popped out-->
+    <div class="modal fade" id="modal3" tabindex="-1" role="dialog"
+        aria-labelledby="Jail vs Prison Phone rates 2008-2018 Line graph" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <!--Modal: phone rates 2008-2018 graph content-->
+            <div class="modal-content">
+                <!--Modal: phone rates 2008-2018 line graph-->
+                <div class="modal-body mb-0 p-0">
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                        <iframe class="embed-responsive-item" src="graphics/phone_rates_2008_2018.png"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!--Modal: phone rates 2008-2018 Footer-->
+                <div class="modal-footer justify-content-center">
+                    <p>There are no mistakes. You can fix anything that happens. There is no right or
+                        wrong- as long as
+                        it makes you happy and doesn't hurt anyone.</p>
+
+                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    
+
+    <!--Modal 4: KY's incarcerated populations by facility type pie graph popped out-->
+    <div class="modal fade" id="modal4" tabindex="-1" role="dialog"
+        aria-labelledby="Kentucky's Incarcerated Populations by Facility Pie Graph" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <!--Modal: KY's incarcerated populations by facility type pie graphcontent-->
+            <div class="modal-content">
+                <!--Modal: KY's incarcerated populations by facility type pie graphline graph-->
+                <div class="modal-body mb-0 p-0">
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                        <iframe class="embed-responsive-item" src="graphics/incarc_2018_pie.png"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!--Modal: KY's incarcerated populations by facility type pie graph Footer-->
+                <div class="modal-footer justify-content-center">
+                    <p>There are no mistakes. You can fix anything that happens. There is no right or
+                        wrong- as long as
+                        it makes you happy and doesn't hurt anyone.</p>
+
+                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    
+
+    <!--Modal 5: urban vs rural jails map popped out-->
+    <div class="modal fade" id="modal5" tabindex="-1" role="dialog"
+        aria-labelledby="Urban vs Rural county's and Jail locations Map" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <!--Modal: urban vs rural jails content-->
+            <div class="modal-content">
+                <!-- Modal: Urban vs Rural Header -->
+                <div class="modal-header">
+                    Urban vs Rural County Map with Jail Locations
+                </div>
+                <!--Modal: urban vs rural jails map-->
+                <div class="modal-body mb-0 p-0">
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                        <iframe class="embed-responsive-item" src="graphics/ky_urban_rural_jails.png"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!--Modal: urban vs rural jails Footer-->
+                <div class="modal-footer justify-content-center">
+                    <p>There are no mistakes. You can fix anything that happens. There is no right or
+                        wrong- as long as
+                        it makes you happy and doesn't hurt anyone.</p>
+
+                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+        <!-- Modal: urban vs rural jail on page
+    <a><img class="img-fluid z-depth-1" src="graphics/ky_urban_rural_jails.png"
+        alt="Urban vs Rural County map with Jail locals mapped for KY" data-toggle="modal" data-target="#modal5"></a> -->
+
+
+
+        <!--Modal 6: point map of jail/prison popped out-->
+        <div class="modal fade" id="modal6" tabindex="-1" role="dialog"
+            aria-labelledby="Point map of Jail/Prison in Kentucky" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <!--Modal: point map of jail/prison content-->
+                <div class="modal-content">
+                    <!-- Modal: Jail/Prison Header -->
+                    <div class="modal-header">
+                        All Kentucky Adult Incarceration Facilities
+                    </div>
+                    <!--Modal: point map of jail/prison map-->
+                    <div class="modal-body mb-0 p-0">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                            <iframe class="embed-responsive-item" src="graphics/ky_jail_prison_locals.png"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!--Modal: point map of jail/prison Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <p>There are no mistakes. You can fix anything that happens. There is no right or
+                            wrong- as long as
+                            it makes you happy and doesn't hurt anyone.</p>
+
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+    </div>
+        <!-- Modal: point map of jail/prison on page
+    <a><img class="img-fluid z-depth-1" src="graphics/ky_jail_prison_locals.png"
+            alt="Ky Incarcerations Facility Point Local Map" data-toggle="modal" data-target="#modal6"></a>
+    -->
+
+        <!--Modal 7: percent of county incarcerated map popped out-->
+        <div class="modal fade" id="modal7" tabindex="-1" role="dialog"
+            aria-labelledby="Percent of County Incarcerated Choropleth Map" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <!--Modal: percent of county incarceratedcontent-->
+                <div class="modal-content">
+                    <!-- Modal: % of county incarcerated map Header -->
+                    <div class="modal-header">
+                        Percent of County Incarcerated
+                    </div>
+                    <!--Modal: percent of county incarcerated map-->
+                    <div class="modal-body mb-0 p-0">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+                            <iframe class="embed-responsive-item" src="graphics/incarc_pop_county.png"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!--Modal: percent of county incarcerated Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <p>There are no mistakes. You can fix anything that happens. There is no right or
+                            wrong- as long as
+                            it makes you happy and doesn't hurt anyone.</p>
+
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+    </div>
+        <!--Modal: percent of county incarcerated on page-->
+        <!-- <a><img class="img-fluid z-depth-1" 
+            src="graphics/incarc_pop_county.png"
+            alt="% of KY County Population Incarcerated in Jail Choropleth" 
+            data-toggle="modal"
+            data-target="#modal7"
+        >
+    </a> -->
+
+
     <!-- Title Container -->
     <div class="container-fluid">
         <div class="row banner1">
@@ -214,217 +458,151 @@
                             society as responsible citizens is to halt the isolation of these citizens to their
                             communities.
                         </p>
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
 
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
-
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
-
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
-
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
-
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
-
-                        <!-- link trigger modal
-                    <li><a href="graphics/wmmt_range.png"
-                    data-bs-toggle="modal"
-                    data-bs-target="#mod-01">list 1</a></li> -->
+                        <!-- Body Section of maps/videos Triggers-->
 
                     </div>
 
                     <div class="col-md-6">
-                        <!-- WMMT Radio Station Range -->
-                        WMMT Radio Station's Range and Incarceration Facilities its Signal Reaches
+
+                        <!--Modal 1 WMMT Radio Station Range -->
+                        WMMT Radio Station Incarceration Faclity Signal Reach
+                        <!-- Modal Trigger Link -->
+                        <a href="graphics/wmmt_range.png" data-bs-toggle="modal1" data-bs-target="#modal1">Map</a>
                         <img class="img-fluid w-100" src="graphics/wmmt_range.png"
                             alt="WMMT radio station broadcasting range" />
 
-                        <!-- Calls From Home Video -->
+                        <!-- Calls From Home Video new tab-->
+                        WMMT Calls From Home Documentary Video
+                        <!-- link trigger new tab -->
                         <a target="_blank" href="https://www.youtube.com/watch?v=RUUAOyA_SCo"><img
                                 class="img-fluid w-100" src="graphics/calls_from_home.png"
                                 alt="Calls from Home Video" />
                         </a>
 
                         <!-- Modal 2 conviction status of those incarcerated line graph-->
-                        Conviction status of those incarcerated line graph
+                        Conviction status of KY's incarcerated (Jail)
+                        <!-- Modal Trigger Link -->
+                        <a href="graphics/convicted_status_1978-2013.png" data-bs-toggle="modal2" data-bs-target="#modal2">Line Graph</a>
                         <img class="img-fluid w-100" src="graphics/convicted_status_1978-2013.png"
                             alt="Conviction Status of KY Incarcerated Line Graph" />
 
                         <!-- Modal 3 Phone rates 2008-2018 line graph -->
-                        Phone rates 2008-2018 line graph
+                        Phone rates 2008-2018
+                        <!-- Modal Trigger Link -->
+                        <a href="graphics/phone_rates_2008_2018.png" data-bs-toggle="modal3" data-bs-target="#modal3">Line Graph</a>
                         <img class="img-fluid w-100" src="graphics/phone_rates_2008_2018.png"
                             alt="Phone rates 2008-2018 Line Graph comparing Prisons and Jails" />
 
                         <!-- Modal 4 Ky's Incarcerated populations by facility type pie graph -->
-                        KY's Incarcerated populations by Facility type Pie Graph
+                        KY's Incarcerated populations by Facility type
+                        <a href="graphics/incarc_2018_pie.png" data-bs-toggle="modal4" data-bs-target="#modal4">Pie Graph</a>
                         <img class="img-fluid w-100" src="graphics/incarc_2018_pie.png"
                             alt="KY's Incarcerated populations by Facility type Pie Graph" />
 
                         <!-- Modal 5 Urban vs rural jails map-->
-                        KY Urban vs Rural Counties and Jails
+                        KY Urban vs Rural Counties and Jail Location
+                        <a href="graphics/ky_urban_rural_jails.png" data-bs-toggle="modal5" data-bs-target="#modal5">Map</a>
                         <img class="img-fluid w-100" src="graphics/ky_urban_rural_jails.png"
                             alt="KY Urban vs Rural Counties and Jails Choropleth Map" />
 
                         <!-- Modal 6 point map of jail/prison-->
-                        Point map of Jails/Prisons in KY
+                        Jails/Prisons in KY Point
+                        <a href="graphics/ky_jail_prison_locals.png" data-bs-toggle="modal6" data-bs-target="#modal6">Map</a>
                         <img class="img-fluid w-100" src="graphics/ky_jail_prison_locals.png"
                             alt="KY Jail and Prison Locations and County Map" />
 
                         <!-- Modal 7 percent of county incarcerated map-->
-                        Percent of County Incarcerated
+                        Percent of KY County Populations Incarcerated
+                        <a href="graphics/incarc_pop_county.png" data-bs-toggle="modal7" data-bs-target="#modal7">Map</a>
                         <img class="img-fluid w-100" src="graphics/incarc_pop_county.png"
                             alt="Percent of KY County Populations Incarcerated Map" />
                     </div>
                 </div>
 
 
-                <!--Modal 1: WMMT map-->
-                <!-- fade permits fade effect, tabindex=-1 sets the modal open focus on the div element itself, dialog means it opens as dialog box, aria is accessbile rich internet applications and correlates frequently to e screen readers-->
-                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="WMMT map"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <!--Modal: WMMT map Content-->
-                        <div class="modal-content">
-                            <!-- Modal: WMMT map Header -->
-                            <div class="modal-header">
-                                WMMT Radio Station's Range and Incarceration Facilities its signal Reaches
-                            </div>
-                            <!--Modal: WMMT map Body-->
-                            <div class="modal-body mb-0 p-0">
-                                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
-                                    <iframe class="embed-responsive-item" width="560" height="315"
-                                        src="graphics/wmmt_range.png" allowfullscreen></iframe>
-                                </div>
-                            </div>
 
-                            <!--Modal: WMMT map Footer-->
-                            <div class="modal-footer justify-content-center">
-                                <p>There are no mistakes. You can fix anything that happens. There is no right or
-                                    wrong- as long as
-                                    it makes you happy and doesn't hurt anyone.</p>
-
-                                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                                    data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!--/.Content-->
-                    </div>
-                </div>
-                <!--Modal: WMMT range map-->
-                <a><img class="img-fluid z-depth-1" src="graphics/wmmt_range.png"
-                        alt="WMMT radio station broadcasting range" data-toggle="modal" data-target="#modal1"></a>
             </div>
-
-            <!-- WMMT video card 
-            <div class="col-10">
-                <div class="card">
-                    <a target="_blank" href="https://www.youtube.com/watch?v=RUUAOyA_SCo"><img class="card-img-top"
-                            src="graphics/calls_from_home.png" alt="Calls from Home Video"></a>
-
-                </div>
-            </div> -->
-            <!-- WMMT video card -->
-
         </div>
-    </div>
 
 
+        <div class="row text-dark py-2 px-2">
+            <div class="col">
+                <ul class="list-unstyled">
+                    <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
 
-    <div class="row text-dark py-2 px-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>Authored by <a href="https://github.com/RCRamsey">RC Ramsey</a></li>
+                    <li>20 June 2021</li>
 
-                <li>20 June 2021</li>
+                    <li>Data sources: </li>
 
-                <li>Data sources: </li>
+                    <ul class="entry-content style=" list-style-type: square;">
+                        <li>Geolocated points for all incarceration facilities compiled by:
+                            Pulling Federal Prison points from <a href="http://www.poi-factory.com/node/24953">POI
+                                (2020)</a>.
 
-                <ul class="entry-content style=" list-style-type: square;">
-                    <li>Geolocated points for all incarceration facilities compiled by:
-                        Pulling Federal Prison points from <a href="http://www.poi-factory.com/node/24953">POI
-                            (2020)</a>.
+                            State prison and jail facilities were identified using
+                            an internet search for every KY county (including the terms detention; correction; jail;
+                            prison;). Each facility's physical address was pulled from their respective websites and
+                            geolocated. For each facility's individual state, county, county FIPS, Facility Type,
+                            Physical Address, Phone Provider and Phone Rates (if available), latitude/longitude,
+                            address source and website reference <a href="data/ky_jail_prison_by_county.csv">CSV</a>.
 
-                        State prison and jail facilities were identified using
-                        an internet search for every KY county (including the terms detention; correction; jail;
-                        prison;). Each facility's physical address was pulled from their respective websites and
-                        geolocated. For each facility's individual state, county, county FIPS, Facility Type,
-                        Physical Address, Phone Provider and Phone Rates (if available), latitude/longitude,
-                        address source and website reference <a href="data/ky_jail_prison_by_county.csv">CSV</a>.
+                            The presence or absence of a county's facility was further confirmed by referencing a <a
+                                href="https://corrections.ky.gov/Facilities/Documents/Local%20Facilities/Jail%20Classifications%2003-31-21.pdf ">map</a>
+                            of KY's counties
+                            indicating state/jail incarceration facilities.
 
-                        The presence or absence of a county's facility was further confirmed by referencing a <a
-                            href="https://corrections.ky.gov/Facilities/Documents/Local%20Facilities/Jail%20Classifications%2003-31-21.pdf ">map</a>
-                        of KY's counties
-                        indicating state/jail incarceration facilities.
+                        </li>
 
-                    </li>
+                        <li>2018 Phone Rates for 32 KY jails filtered from
+                            <a href="https://www.prisonpolicy.org/phones/appendix_table_2.html">Prison Policy
+                                Initiative</a> combined with geolocated incarceration data (<a
+                                href="data/rates_ky_jail_by_cnty.csv">CSV</a>). The CSV was loaded into leaflet
+                            using Omnivore and further modified within leaflet and javascript to produce the
+                            interactive map.</li>
 
-                    <li>2018 Phone Rates for 32 KY jails filtered from
-                        <a href="https://www.prisonpolicy.org/phones/appendix_table_2.html">Prison Policy
-                            Initiative</a> combined with geolocated incarceration data (<a
-                            href="data/rates_ky_jail_by_cnty.csv">CSV</a>). The CSV was loaded into leaflet
-                        using Omnivore and further modified within leaflet and javascript to produce the
-                        interactive map.</li>
+                        <li><a href="https://www.wmmt.org/callsfromhome/">Incarceration facilities </a> reached by
+                            WMMT Radio station for its "Calls From Home" program.
+                            Their documentary video (produced by <a href="http://www.fieldstudiofilms.com">Field
+                                Studio</a>
+                            May-July 2012) can also be found at the same site, on <a
+                                href="https://vimeo.com/44433312">vimeo</a> or <a
+                                href="https://www.youtube.com/watch?v=RUUAOyA_SCo">youtube</a>.
+                        </li>
 
-                    <li><a href="https://www.wmmt.org/callsfromhome/">Incarceration facilities </a> reached by
-                        WMMT Radio station for its "Calls From Home" program.
-                        Their documentary video (produced by <a href="http://www.fieldstudiofilms.com">Field
-                            Studio</a>
-                        May-July 2012) can also be found at the same site, on <a
-                            href="https://vimeo.com/44433312">vimeo</a> or <a
-                            href="https://www.youtube.com/watch?v=RUUAOyA_SCo">youtube</a>.
-                    </li>
+                        <li> Conviction Status in KY 1978+ line graph & KY's incarcerated by location pie graph from
+                            <a href="https://www.prisonpolicy.org/profiles/KY.html">Prison Policy Initiative</a>.
+                        </li>
 
-                    <li> Conviction Status in KY 1978+ line graph & KY's incarcerated by location pie graph from
-                        <a href="https://www.prisonpolicy.org/profiles/KY.html">Prison Policy Initiative</a>.
-                    </li>
+                        <li> Phone Rates line graph comparing 2008-2018 jail vs prison <a
+                                href="https://www.prisonpolicy.org/phones/state_of_phone_justice.html"> Prison
+                                Policy
+                                Initiative</a>.</li>
 
-                    <li> Phone Rates line graph comparing 2008-2018 jail vs prison <a
-                            href="https://www.prisonpolicy.org/phones/state_of_phone_justice.html"> Prison
-                            Policy
-                            Initiative</a>.</li>
-
-                    <li>
-                        Choropleth county map identifying the metro area size created in QGIS 3.16 using <a href="https://www.cdc.gov/nchs/data_access/urban_rural.htm#Data_Files_and_Documentation
+                        <li>
+                            Choropleth county map identifying the metro area size created in QGIS 3.16 using <a href="https://www.cdc.gov/nchs/data_access/urban_rural.htm#Data_Files_and_Documentation
                                 ">National Center for Health Statistics and Centers for Disease Control Classification
-                            (2013)
-                        </a> and filtering for only KY counties (final <a href="data/2013_urban_rural.csv">CSV</a>).
-                    </li>
+                                (2013)
+                            </a> and filtering for only KY counties (final <a href="data/2013_urban_rural.csv">CSV</a>).
+                        </li>
 
-                    <li>
-                        All maps containing a county geometry boundary shapefile used <a
-                            href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
-                            US Cartographic</a>.
-                    </li>
+                        <li>
+                            All maps containing a county geometry boundary shapefile used <a
+                                href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
+                                US Cartographic</a>.
+                        </li>
 
-                    <li>
-                        Percent population incarcerated by county determined using
-                        2018 American Fact Finder <a href="https://data.census.gov/cedsci/">county
-                            populations</a> table joined with jail populations (collected from each respective
-                        institution's website if available) mapped in QGIS 3.16 (<a
-                            href="data/incarc_pop_cnty_may_2021_jail.csv">CSV</a> and <a
-                            href="data/incarc_pop_county_pop_2021.geojson">geojson</a>).
-                    </li>
-                </ul>
+                        <li>
+                            Percent population incarcerated by county determined using
+                            2018 American Fact Finder <a href="https://data.census.gov/cedsci/">county
+                                populations</a> table joined with jail populations (collected from each respective
+                            institution's website if available) mapped in QGIS 3.16 (<a
+                                href="data/incarc_pop_cnty_may_2021_jail.csv">CSV</a> and <a
+                                href="data/incarc_pop_county_pop_2021.geojson">geojson</a>).
+                        </li>
+                    </ul>
+            </div>
         </div>
-    </div>
     </div>
     </div>
     </div>
