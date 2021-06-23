@@ -9,13 +9,6 @@ var map = L.map('map', {
 
 var accessToken = 'pk.eyJ1IjoicmNyYW1zZXkiLCJhIjoiY2tpN3UxOTJwMnh2ejJycXFja3NxemRocyJ9.cbhIjbrLpEGG0HkQS3fGLA'
 
-// L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}`, {
-//     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-//     maxZoom: 18,
-//     id: 'light-v10',
-//     accessToken: accessToken
-// }).addTo(map);
-
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
     accessToken: accessToken
@@ -50,7 +43,6 @@ const layer1 = $.getJSON('data/ky-counties.geojson', function (data) {
 
 })
 
-
 $.when(layer1)
     .then(function () {
         omnivore.csv('data/rates_ky_jail_by_cnty.csv')
@@ -72,7 +64,6 @@ $.when(layer1)
             });
     })
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
 //send argument 'e.target.toGeoJSON()' and drawMap accept as parameter 'data'
 function drawMap(data) {
     //access to data here
@@ -89,7 +80,6 @@ function drawMap(data) {
     //sum of array and values of array returned
     //.length calculates how many numbers in the original array
     //Returned sum from .reduce function is then divided by how many numbers are in the array. to caluclate average of array 
-    //🐔 what does the ,0 do on line 90?
 
     //fifteen minute data used as it incorporates both the initial 1st min phone call and additional minute cost. 
     lz['fifteen minute'].average =
@@ -100,7 +90,6 @@ function drawMap(data) {
     console.log(lz['fifteen minute'].average)
 
 
-    ///////////////////////////////////////////////////////////////////////////////////////
     //define common Style for proportional symbols to be displayed
 
     var commonStyles = {
@@ -139,11 +128,10 @@ function drawMap(data) {
                 });
                 layer.on('mouseout', function (e) {
 
-                    // layer.setStyle(lz.color)/
 
                     e.target.setStyle({
-                        fillColor: lz['fifteen minute'].color
-
+                        // fillColor: lz['fifteen minute'].color
+                        fillColor: colorCircles(layer.feature.properties['fifteen minute'], lz['fifteen minute'].average)
                     });
                 })
             });
@@ -159,19 +147,17 @@ function drawMap(data) {
 
             // console.log(props.Facility);
 
-            //create popup with Name of layer & cost by referencing geoJSON
+            //create popup with Name of layer & cost referencing geoJSON
             var popup = `<b>Name:</b> ${props.Facility}<br>
                             <b>Provider:</b> ${props.Provider}<br>
                             <b>15 minute call cost:</b> $${props['fifteen minute']}, ${lz['fifteen minute'].compare}% of average facility call cost`
 
             layer.bindTooltip(popup)
 
-
         }
 
     }).addTo(map);
   
-    
     reColorCircles(cost)
 } // end drawMap()
 
@@ -204,24 +190,27 @@ function getRadius(area) {
 
 //     legendControl.addTo(map);
 
-//🐔  data.eachLayer not a function error
+// Function to assign circle colors based on the individual leaflet layer's (one layer per circle) value in relationship to the average value for the state.  
 function reColorCircles(data) {
 
+    // iterate through each leaflet circle layer
     data.eachLayer(function(layer){
         const p = layer.feature.properties
         console.log(p['fifteen minute'])
 
+        //color circle based on value in relationship to avg value for entire data set
         layer.setStyle({
             fillColor: colorCircles(p['fifteen minute'], lz['fifteen minute'].average)
         });
     })
 }
 
+//color function
 function colorCircles (x, avg) {
     if (x>= 1.5 * avg) {
         return 'red'
     } else if (x>= avg ) {
-        return 'orange'
+        return '#d16706'
     } else if (x>= 0.5* avg) {
         return 'gray'
     } else {
