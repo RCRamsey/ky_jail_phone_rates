@@ -168,27 +168,22 @@ function getRadius(area) {
     return radius * 15;
 }
 
-// // drawLegend function
-// function drawLegend(data){
-//     console.log(data);
-//     //create leaflet control for the legend
-//     const legendControl=L.control ({
-//         position: 'bottomright'
-//     });
+//create legend using leaflet control
+var info = L.control();
 
-//     //when control added to map
-//     legendControl.onAdd= function (map) {
-//         const legend = L.DomUtil.get('legend');
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
 
-//         //disable scrol/click functionaliaty
-//         L.DomEvent.disableScrollPropagation(legend);
-//         L.DomEvent.disableClickPropagation(legend);
+// control based on feature properties passed
+info.update = function (props) {
+    this._div.innerHTML = '<h7>+1.5x State Average</h7>' + '<h8><br>1-1.5x State Average</h8>' + '<h9><br>0.5-1x State Average</h9>' + '<h10><br> <0.5x State Average</h10>';
+};
 
-//         //return selection
-//         return legend;
-//     };
+info.addTo(map);
 
-//     legendControl.addTo(map);
 
 // Function to assign circle colors based on the individual leaflet layer's (one layer per circle) value in relationship to the average value for the state.  
 function reColorCircles(data) {
@@ -203,6 +198,7 @@ function reColorCircles(data) {
             fillColor: colorCircles(p['fifteen minute'], lz['fifteen minute'].average)
         });
     })
+
 }
 
 //color function
