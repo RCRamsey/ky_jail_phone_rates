@@ -14,79 +14,85 @@
 
 ## Part I: Visuals & Data Sources 
 
-**Anticipated Visual 1**  
+**Visual 1**  
 2018 Phone Rates Map  
 *Source*  
  - https://www.prisonpolicy.org/phones/appendix_table_2.html
  
 *Description*  
 Data for phone rates (1st minute, every additional minute, avg for 15 minute phone call instate) from 32 county Jails of Kentucky.  
-Data can be found in the *assignment/data/ky_jail_prison_by_county.csv*
+Data can be found in the *data/ky_jail_prison_by_county.csv*
 
-**Anticipated Visual 2 & 3**  
-KY Prison and Jail incarceration rates (line graph 1978-2014) & How many Residents of KY locked up and where by facility type (pie chart 2018)  
-*Source*  
+
+**Visual 2 & 3**  
+WMMT location marked and a circle radius demonstrating all incarceration facilities it reaches with its show and a video about *Calls from Home*.  
+*Sources*  
+- https://www.wmmt.org/callsfromhome/  
+- https://vimeo.com/44433312
+- https://www.youtube.com/watch?v=RUUAOyA_SCo
+
+*Description*  
+A demonstration of the current state of affairs for some families. Credit given to WMMT and the individual/organization(s) Field Studio who filmed/posted the interview of the *Calls from Home* show.
+
+**Visual 4**
+Line graph of conviction rate for those housed in KY jail facilities since 1978.  
+*Source*
 - https://www.prisonpolicy.org/profiles/KY.html
 
-*Descriptions*  
-Line graph to demonstrate the increase rates of persons in jail since 1978.
-Pie chart to demonstrate shear number of Kentucky residents locked up at one time within Kentucky (local jail, state prison, federal prison). Credit will be given to prisonpolicy.org as it is their data compilation and figure.
-       
-**Anticipated Visual 4**  
+*Description*
+Line graph demonstrates how over time, the pre-trial population (those in jail and not yet convicted or considered guilty of anything) has more than doubled since 1978. Thus, those considered innocent until proven guilty are still being punished through phone call fees and rates. Credit given to prisonpolicy.org as it is their data compilation and figure.
+
+**Visual 5**  
 Line graph of Phone rates over time comparing prisons and jails based on 15 minute phone call (2008-2018)  
 *Source*  
 - https://www.prisonpolicy.org/phones/state_of_phone_justice.html
 
 *Description*  
-Comparison of phone rates between prisons and jails based on 15 minute phone call from 2008-2018 to demonstrate that since FCC set caps in prisons their rates plummeted and yet Jails are still quite high. Credit will be given to prisonpolicy.org as it is their data compilation and figure.
+Comparison of phone rates between prisons and jails based on 15 minute phone call from 2008-2018 to demonstrate that since FCC set caps in prisons their rates plummeted and yet Jails are still quite high. Credit given to prisonpolicy.org as it is their data compilation and figure.
 
-**Anticipated Visual 5**  
-Point map of locations of all prison and jails of ky   
+**Visual 6**  
+How many Residents of KY locked up and where by facility type (pie chart 2018)  
+*Source*  
+- https://www.prisonpolicy.org/profiles/KY.html
+
+*Description*  
+Pie chart to demonstrate shear number of Kentucky residents locked up at one time within Kentucky (local jail, state prison, federal prison). Credit given to prisonpolicy.org as it is their data compilation and figure.
+       
+**Visual 7**  
+Choropleth counties urban vs. rural county  
+*Source*  
+Urban vs Rural Data from National Center for Health Statistics & Centers for Disease Control (2013)
+- https://www.cdc.gov/nchs/data_access/urban_rural.htm#Data_Files_and_Documentation  
+
+*Description*  
+The original data was for counties nationwide. Pulled KY counties from this data using the same 6 designations of 1 Large Central Metro (inner city) 2 Large Fringe Metro (suburban) 3 Medium Metro 4 Small Metro 5 Micropolitan 6 Non-core. This demonstrates the  isolation of the locations and burden placed on a person to travel (distance to cover with or without a vehicle) and meet the incarcerated person face to face as opposed to using the phone.
+Data can be found *data/2013_urban_rural.csv* 
+
+**Visual 8**  
+Point map of locations of all prison and jails of KY   
 *Sources*   
 - Federal Prisons pulled from POI (2020): http://www.poi-factory.com/node/24953   
 - KY Jails layer created (2021) by
 searching online for each county in KY listed as having an open facility based on the figure in https://corrections.ky.gov/Facilities/Documents/Local%20Facilities/Jail%20Classifications%2003-31-21.pdf  
 - Terms used for online search of jails by county include: detention; correction; jail.  
-- Physical addresses revealed upon internet search were pulled from their respective websites and geolocated. If no website exhists, google maps was used to search by county.
+- Physical addresses revealed upon internet search were pulled from their respective websites and geolocated. If no website exhists, internet search used to search by county.
 
 *Description*  
-Ky map with points to demonstrate the numerous facilities across KY and their captive market.  
-Data can be found *assignment/data/ky_jail_prison_by_county.csv* 
+KY map with points to demonstrate the numerous facilities across KY and their captive market.  
+Data can be found *data/ky_jail_prison_by_county.csv* 
        
-**Anticipated Visual 6**  
-Point map of prison/jail locations in KY with WMMT location marked and a circle radius demonstrating all incarceration facilities it reaches with its show and a video about *Calls from Home*.  
-*Sources*  
-- https://www.wmmt.org/callsfromhome/  
-- https://vimeo.com/44433312
 
-*Description*  
-A demonstration of the current state of affairs for some families. Credit will be given to WMMT and the individual/organization who filmed/posted the interview of the *Calls from Home* show.
-
-**Anticipated Visual 7**  
-Chloropleth map showing % of county population incarcerated  
+**Visual 9**  
+Choropleth map showing % of county population incarcerated  
 *Sources*  
 - Population of county census (2019) https://www.census.gov/search-results.html?searchType=web&cssp=SERP&q=population%20county%20ky
-- Population of county incarcerated by county in jail (updated weekly will pull most recent 2021) https://corrections.ky.gov/About/researchandstats/Pages/weeklyjail.aspx  
-- Population of county in state prison (2021) https://corrections.ky.gov/Facilities/AI/Pages/default.aspx
-- Population of county in federal prison (2021) https://www.bop.gov/mobile/about/population_statistics.jsp#bop_pop_table
+- Population of county incarcerated by county in jail (updated weekly and pulled most recent May 2021) https://corrections.ky.gov/About/researchandstats/Pages/weeklyjail.aspx  
 
 *Description*  
 math=(pop of prison + pop of jail / county pop)*100
 Map demonstrating the percentage of the county population counted as being incarcerated as of look up date. Regardless of how forms are filled out, census assigns incarcerated people to the address of the prison. Demonstrates how much of a county is subject to these phone rates.
-Data can be found *assignment/data/2019_pop_est_county_ky.csv* & *assignment/data/incarc_pop_cnty_may_2021_sum.csv*
+Data can be found *data/2019_pop_est_county_ky.csv* & *data/incarc_pop_cnty_may_2021_sum.csv*
 
-
-**Anticipated Visual 8**  
-Choropleth counties urban vs. rural including median income per county
-*Source*  
-- Urban vs Rural Data from National Center for Health Statistics & Centers for Disease Control (2013)
-https://www.cdc.gov/nchs/data_access/urban_rural.htm#Data_Files_and_Documentation  
-- Median Income Estimate Data by county (2015-2019) from
-https://www.census.gov/search-results.html?searchType=web&cssp=SERP&q=median%20income%20kentucky%20county
-
-*Description*  
-The original data was for counties nationwide. Will be pulling KY counties from this data using the same 6 designations of 1 Large Central Metro (inner city) 2 Large Fringe Metro (suburban) 3 Medium Metro 4 Small Metro 5 Micropolitan 6 Non-core. This will demonstrate the potential isolation of the locations and the potential financial strain put on the county population if their family member is incarcerated locally.
-Data can be found *assignment/data/NCHSURCodes2013_raw.csv* & *assignment/data/2015_19_med_income_cnty.csv*
 
 ## Part II: Topic & Geographic Phenomena 
 
@@ -126,50 +132,52 @@ contact links I provide on the map site for his state legislature and starts wri
 He also knows if he wants anything to change faster it has to start local and begins with the next local election for the county Jailer (contact link also found on my site) and wants to know his stance on the predatory contracts and kickbacks he learned about from this map.
 
  ## Part IV: Data Processing & Storage  
- All csv data files used to create the maps will be available for download. 
+ All csv data files used to create the maps available for download. 
 
- **Anticipated Visual 1 2018 Phone Rates Map**
- Data already compiled into a single csv no additional processing necessary besides dynamically in landing page creation.
+ **Visual 1 2018 Phone Rates Map**
+ Data compiled into a single csv no additional processing necessary besides dynamically in landing page creation.
 
- **Anticipated Visuals 2-4**
- Are images that will be downloaded and stored in a graphics folder to load during landing page creation.
+ **Visuals 2-3**
+ Geolocated facilities reached by WMMT Radio station for its "Calls from Home" program in QGIS 3.16 and exported png saved in graphics folder to load during landing page creation. Still png from documentary youtube video saved in graphics folder and click event connected to redirect to youtube video.
 
- **Anticipated Visuals 5-6**
- Data pulled from a single csv with no additional processing necessary besides dynamically in landing page creation
+ **Visuals 4-6**
+ Are images that downloaded and stored in a graphics folder to load during landing page creation.
 
- **Anticipated Visual 7-8**
-Data will be joined based on fips code either through QGIS or in excel, and produced in a single csv to be dynamically processed during landing page creation.
+**Visual 7**
+Data pulled from single csv and joined by county FIPS code in QGIS 3.16. Jail location layer added. Exported and stored in graphics folder to load during landing page creation.
+
+**Visual 8**
+Data pulled from single csv and county layer in QGIS 3.16. Exported and stored in graphics folder to load during landing page creation.
+
+**Visual 9**
+Data pulled from single csv and joined by county FIPS code in QGIS 3.16. Jail location layer added. Exported and stored in graphics folder to load during landing page creation. 
 
 ## Part V: JS Libraries to Employ
 Entire landing page employs *bootstrap* framework.  
-Each map will have it's data stored and loaded as csv (to reduce file size) transformed into a geoJSON using omnivore or papaparse (depending on map), then presented as a mapbox map manipulated through leaflet, assorted vanilla java script and chroma.
+The phone call rates map data is stored and loaded as csv (to reduce file size) transformed into a geoJSON using omnivore then presented as a mapbox map manipulated through leaflet, with assorted vanilla java script and chroma.
 
 Libraries necessary
-**Anticipated Visual 1 2018 Phone Rates Map, Visual 5 point map of facility locations, and Visual 6 point map of facilities relative to WMMT**
+**Visual 1 2018 Phone Rates Map**
 Omnivore to load csv data as geoJSON, assembly.css for additional styling and use jquery/vanilla js for remainder of interactions (listen for interactions, select DOM elements, UI changes).
- <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
-<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script> 
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'>
+    </script>
 
-**Anticipated Visuals 2-4**
+**Visuals 2-9**
 No additional libraries required.
 
-**Anticipated Visual 7 & 8 choropleths**
-Papa parse to load csv data as geoJSON, assembly.css for additional styling,
-chroma to get class breaks and colorize, and jquery/vanilla js for remainder of interactions (listen for interactions, select DOM elements, UI changes).
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
- <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.js"></script>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" integrity="sha512-rKFvwjvE4liWPlFnvH4ZhRDfNZ9FOpdkD/BU5gAIA3VS3vOQrQ5BjKgbO3kxebKhHdHcNUHLqxQYSoxee9UwgA==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.1/chroma.min.js"
-integrity="sha512-RWI59o+PDXjPl3bakOf3k2ZbDtfvn/OU/ZKe6QmkE0V/ve7vYKEJe0RdkDueS+VkghBazP+1o4LKGON+pHUa5g=="
-crossorigin="anonymous"></script>  
-
-**Anticipated Visual 9 timer vs phone call rate**
-Intend on making a jQuery count up timer similar to what I have found here: https://tutorialzine.com/2011/12/countdown-jquery then add an additional section to the timer element that will display cost (using a little math) based on an incarceration facility's phone rates.
+**Header timer vs phone call rate**
+Made a jQuery count up timer using vanilla jQuery and math to display cost based on an incarceration facility's phone rates.
  
-
 ## Part VI: Relevant Tech & Hosting Platform
 Entire project to be contained on a single landing page using HTML, assembly.css, CSS and hosted on Githubpages
