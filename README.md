@@ -9,7 +9,7 @@
 - [Part IV. Data Processing & Storage](#part-iv-data-processing-&-storage)
 - [Part V. JS Libraries to Employ](#part-v-js-libraries-to-employ)
 - [Part VI. Relevant Tech & Hosting Platform](#part-vi-relevant-tech-&-hosting-platform)
-
+- [Part VII. Final Page Site](#part-vii-final-page-site)
 <!-- /TOC -->
 
 ## Part I: Visuals & Data Sources 
@@ -89,8 +89,8 @@ Choropleth map showing % of county population incarcerated
 - Population of county incarcerated by county in jail (updated weekly and pulled most recent May 2021) https://corrections.ky.gov/About/researchandstats/Pages/weeklyjail.aspx  
 
 *Description*  
-math=(pop of prison + pop of jail / county pop)*100
-Map demonstrating the percentage of the county population counted as being incarcerated as of look up date. Regardless of how forms are filled out, census assigns incarcerated people to the address of the prison. Demonstrates how much of a county is subject to these phone rates.
+math=(pop of jail / county pop)*100
+Map demonstrating the percentage of the county population counted as being incarcerated as of look up date. Regardless of how forms are filled out, census assigns incarcerated people to the address of the jail. Demonstrates how much of a county is subject to these phone rates.
 Data can be found *data/2019_pop_est_county_ky.csv* & *data/incarc_pop_cnty_may_2021_sum.csv*
 
 
@@ -99,13 +99,14 @@ Data can be found *data/2019_pop_est_county_ky.csv* & *data/incarc_pop_cnty_may_
 
 During the age of unlimited call/text plans, rates and fees still apply for the incarcerated and their loved ones. This project explores the rates for a 15 minute phone call from 32 Kentucky county jails and the associated impact that poses on parties involved. 
 
-**Title** Rates & Fees STILL Apply  
-**Sub-title** 32 Kentucky County Jail Phone Calls in 2018
+**Title** Rates & Fees Apply  
+**Sub-title** 2018 Kentucky County Phone Rates from Jail
 
 ## Part III: Objectives & User Needs
 The stated end goal of most incarceration facilities is the successful permanent reintegration of their members back into society as responsible citizens and yet their members are expected to accomplish this despite having limited to no connection to the community they are returning to. This map's objective is meant to lay bare the blatant roadblocks incarceration facilities construct in preventing this end goal and continuing the cycle of re-incarceration of vulnerable populations.
 
-Chris, a high school civics teacher has a 30 year old sister named Erica and a nephew (Erica's son). Erica lost her full time job as a waitress during the Coronavirus pandemic. During this time her motor vehicle insurance expired and she had to choose between paying it and paying for groceries. She continued driving to drop her son off with Chris (teaching virtually) while job hunting and was pulled over for a darkened tail light. She received a traffic ticket for lack of car insurance but since she still hasn't found a job she never has spare cash to pay the ticket ($250). She was later arrested and placed in jail until her court date. Chris waits until late at night concerned that his sister has picked up his nephew yet.
+An example User scenario:  
+Chris, a high school civics teacher has a 30 year old sister named Erica and a nephew (Erica's son). Erica lost her full time job as a waitress during the Coronavirus pandemic. During this time her motor vehicle insurance expired and she had to choose between paying it and paying for groceries. She continued driving to drop her son off with Chris (teaching virtually) while job hunting and was pulled over for a darkened tail light. She received a traffic ticket for lack of car insurance but since she still hasn't found a job she never has spare cash to pay the ticket ($250). She was later arrested and placed in jail until her court date. Chris waits until late at night concerned that his sister hasn't picked up his nephew yet.
 
 Erica attempts to call Chris, to inform him of the situation, ask if he could take care of her son long term and hire an attorney.
 When Chris first answers the phone an automated voice says, 
@@ -118,27 +119,28 @@ Erica returns home after 60 days in jail, with fines, court fees, jail fees and 
 
 Chris becomes fed up having thought this was going to be a one time blip in Erica's history. He researches online to see if all jails have this same fee system or just his. He finds my map site.
 
-- He finds it's not just his county, however his is the most expensive. He changes the map attribute to *delineate* (1st min-additional minute-15 minute phone call costs) and **reexpress** using a slider the proportional symbols across 32 county facilities in Kentucky.
-- He thinks about all the other families impacted the same way he has. Some even rely upon a radio show to communicate with their loved ones. He *compares* a radio station's broadcast reach to incarceration facilities in a secondary map and employees its **zoom**
-- He views graphs that show Kentucky's incarceration rates have continued to increase since 1978 and almost a 3rd of the incarcerated of Kentucky are in local jails. 
+- The proportionally set radius circles (based on a 15 minute phone call) at first glance informs him how his county is one of the most expensive. The circles also inform him that his county is not alone. This is confirmed by the circle's color indicating the phone rates are 1.5x greater than the states overall average for 32 counties.
+- He thinks about all the other families impacted the same way he has. Some even rely upon a radio show to communicate with their loved ones. He *compares* a radio station's broadcast reach to incarceration facilities in a secondary map, employing the link to see an enlarged view.
+- He views a graph explaining how Erica is not alone in being subject to all of the phone calls despite not being convicted yet. 
 - He views a graph that shows people in prisons (already found guilty) have lower phone rates (thanks to the FCC caps) than his sister who has to wait until her court date for sentencing.
-- On a secondary map, he *associates* the shear number of incarceration facilities and their large populations **retrieved** by popup. Finding them to be unbelievable; a literal captive market.
-- In a secondary map, he *associates* the relationship between incarceration facilities existing in a rural county that **retrieves** via label the significantly lower median incomes and the hardship this poses.
-- In a secondary map he *identifies* the % of county populations actually incarcerated and employees **zoom**.
+- He views a graphs that shows almost a 3rd of the incarcerated of Kentucky are in local jails. 
+- In a secondary map, he *associates* the relationship between incarceration facilities existing in a rural county and the hardship this poses for meeting face to face encouraging persons to utilize the phone system.
+- On a secondary map, he *associates* the shear number of incarceration facilities in KY Finding them to be unbelievable; a literal captive market.
+- In a secondary map he *identifies* the % of county populations actually incarcerated and how many people in a county are subject to these rates and fees.
 
-Chris concludes it's a pervasive problem. So he uses the
-contact links I provide on the map site for his state legislature and starts writing emails with documentation from my site and asks them to work with contracting authorities, public utilities commissions, the FCC and Congress to battle the unfair treatment.
+Chris concludes it's a pervasive problem. So he uses the internet to find
+contact links for his state legislature and starts writing emails with documentation from my site and asks them to work with contracting authorities, public utilities commissions, the FCC and Congress to battle the unfair treatment.
 
-He also knows if he wants anything to change faster it has to start local and begins with the next local election for the county Jailer (contact link also found on my site) and wants to know his stance on the predatory contracts and kickbacks he learned about from this map.
+He also knows if he wants anything to change faster it has to start local and begins with the next local election for the county Jailer and wants to know his stance on the predatory contracts and kickbacks he learned about from this map.
 
  ## Part IV: Data Processing & Storage  
- All csv data files used to create the maps available for download. 
+ All csv data files and geojson's used to create the maps available for download in the associated data folder.
 
  **Visual 1 2018 Phone Rates Map**
  Data compiled into a single csv no additional processing necessary besides dynamically in landing page creation.
 
  **Visuals 2-3**
- Geolocated facilities reached by WMMT Radio station for its "Calls from Home" program in QGIS 3.16 and exported png saved in graphics folder to load during landing page creation. Still png from documentary youtube video saved in graphics folder and click event connected to redirect to youtube video.
+ Geolocated facilities reached by WMMT Radio station for its "Calls from Home" program in QGIS 3.16 and exported png saved in graphics folder to load during landing page creation. A still png from documentary youtube video saved in graphics folder and click event connected to redirect to youtube video.
 
  **Visuals 4-6**
  Are images that downloaded and stored in a graphics folder to load during landing page creation.
@@ -181,3 +183,6 @@ Made a jQuery count up timer using vanilla jQuery and math to display cost based
  
 ## Part VI: Relevant Tech & Hosting Platform
 Entire project to be contained on a single landing page using HTML, assembly.css, CSS and hosted on Githubpages
+
+## Part VII: Final Page site
+rcramsey.github.io/ky_jail_phone_rates/
