@@ -186,3 +186,5 @@ Entire project to be contained on a single landing page using HTML, assembly.css
 
 ## Part VII: Final Page site
 rcramsey.github.io/ky_jail_phone_rates/
+
+Visit my portfolio here: https://rcramsey.github.io/
