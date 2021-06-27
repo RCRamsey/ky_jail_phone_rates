@@ -185,6 +185,6 @@ Made a jQuery count up timer using vanilla jQuery and math to display cost based
 Entire project to be contained on a single landing page using HTML, assembly.css, CSS and hosted on Githubpages
 
 ## Part VII: Final Page site
-rcramsey.github.io/ky_jail_phone_rates/
+https://rcramsey.github.io/ky_jail_phone_rates/
 
 Visit my portfolio here: https://rcramsey.github.io/
